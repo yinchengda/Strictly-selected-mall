@@ -1,0 +1,106 @@
+/* 第三方 */
+@import 'normalize.css/normalize.css';
+@import './other/iconfont/iconfont.css';
+
+/* rem */
+@function rem($px){
+    @return  unquote($px / 46.875 + 'rem');
+}
+
+/* index */
+@import './other/header.scss';
+@import './other/index/banner.scss';
+@import './other/index/nav.scss';
+@import './other/index/cutPrice.scss';
+@import './other/index/footer.scss';
+@import './other/index/selection.scss';
+@import './other/index/recommend.scss';
+@import './other/index/buyTemplate.scss';
+
+/* classify */
+@import './other/classify/classify-top';
+@import './other/classify/classify-list';
+@import './other/classify/classify-content';
+@import './other/classify/banner';
+
+/* shopcar */
+@import './other/shopcar/head.scss';
+@import './other/shopcar/shopData.scss';
+@import './other/shopcar/shopData_null.scss';
+@import './other/shopcar/guessLike.scss';
+@import './other/shopcar/footer.scss';
+
+
+/* user */
+@import './other/user/head.scss';
+@import './other/user/notice.scss';
+@import './other/user/order.scss';
+@import './other/user/tool.scss';
+
+/* moudelInfo */
+@import './other/moduleInfoList/cutPrice.scss';
+@import './other/moduleInfoList/topic.scss';
+@import './other/moduleInfoList/groupBooking.scss';
+
+//ShopInfo
+@import './other/infoBanner.scss';
+@import './other/shopMain.scss';
+@import './other/shopMessage.scss';
+@import './other/cutShopInfo/footer.scss';
+@import './other/shopInfo/foot.scss';
+
+//confirm order
+@import './other/siteOrder/index.scss';
+
+//confirm payment
+@import './other/confirmPayment/confirmPayment.scss';
+
+//my site
+@import './other/mysite/add.scss';
+@import './other/mysite/index.scss';
+
+//login
+@import './other/login/index.scss';
+
+
+ul,ol,li,h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+    padding: 0;
+}
+ul,ol{
+    list-style: none;
+}
+body{
+    color: #333;
+    font-size: rem(14);
+    background: #f5f5f5
+}
+button{
+    outline: none;
+    border: none;
+}
+a{
+    color: #333;
+    text-decoration: none;
+}
+#index{
+    background: #f5f5f5;
+}
+#classify{
+    background: #fff;
+}
+#App{
+    min-width: 320px;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+#topic-content{
+    p{
+        width: 100%;
+            img{
+                width: 100%;
+            }
+        
+    }
+}

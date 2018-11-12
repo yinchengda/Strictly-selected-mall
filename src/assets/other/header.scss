@@ -1,0 +1,11 @@
+#common-header{
+    display: flex;
+    justify-content: space-between;
+    height: rem(50);
+    padding: rem(15);
+    font-size: rem(35);
+    border-bottom: 1px solid #c2c2c2;
+    .iconfont{
+        font-size: rem(35);
+    }
+}

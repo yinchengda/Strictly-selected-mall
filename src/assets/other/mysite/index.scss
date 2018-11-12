@@ -1,0 +1,71 @@
+.my-site-main{
+    background: #fff;
+    .my-site-list{
+        .site-item{
+            display: flex;
+            padding: rem(20);
+            align-items: center;
+            .checked-box{
+                input{
+                    outline: none;
+                    // margin-top: rem(80);
+                    -webkit-appearance:none;
+                    width: rem(45);
+                    height: rem(45);
+                    background: url('/static/圈圈.png') no-repeat;
+                    background-size:100% 100%;
+                }
+                input:checked{
+                    background: url();
+                    background-color: #b8282e;
+                    background-image: url('/static/对号.png');
+                    background-size: 110%;
+                    background-position:rem(46) 0;//不好使 -.-
+                    // content: "\2714";//不是对号吗 -.-
+                    color: #fff;
+                    width: rem(45);
+                    height: rem(45);
+                    border-radius: 50%;
+                    
+                }
+            }
+            .site-message{
+                margin-left:rem(20);
+                .username-num{
+                    font-size: rem(35);
+                }
+                .describe{
+                    margin-top: rem(20);
+                    font-size: rem(30);
+                    color: #797979;
+                }
+            }
+            .icon-right{
+                margin-left: rem(300);
+                margin-bottom: rem(50);
+                .iconfont{
+                    font-size: rem(50);
+                    color: #797979;
+                }
+            }
+        }
+    }
+    .foot{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        padding: rem(30) 0;
+        font-size: rem(35);
+        text-align: center;
+        border-top: 1px solid #ccc;
+        box-shadow: 3px 3px 3px #ddd;
+        a{
+            color: #ab2f36;
+            span{
+                font-size: rem(50);
+            }
+        }
+        
+    }
+}

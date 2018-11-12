@@ -1,0 +1,47 @@
+.addsite-main{
+    background: #fff;
+    text-align: center;
+    table{
+        padding: rem(10);
+        font-size: rem(35);
+        tr{
+            .site-key{
+                text-align: left;
+            }
+            td{
+                padding: rem(25);
+                border-bottom: 1px solid #f2f2f2;
+                input{
+                    outline: none;
+                    border: none;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    button{
+        outline: none;
+        border: none;
+        border-radius: rem(10);
+        width: 90%;
+        margin: 0 auto;
+        height: rem(78);
+        font-size: rem(30);
+        margin: rem(15) 0;
+    }
+    .save-site{
+        background: #e64241;
+        border: 1px solid #d68887;
+        color: #fff;
+    }
+    .read-site{
+        background: #16aa18;
+        border:1px solid #a2e2a3;
+        color: #fff;
+    }
+    .clear{
+        background: #fff;
+        border:1px solid #d9d9da;
+    }
+}

@@ -1,0 +1,160 @@
+.confirm-order{
+    font-size: rem(34);
+    .select-site{
+        padding: rem(30) rem(20);
+        display:flex;
+        justify-content: space-between;
+        .site-icon{
+            .icon-dizhi1{
+                font-size: rem(40);
+                color: #ccc;
+            }
+        }
+        .site-message{
+            margin-right: rem(180);
+            font-weight: bold;
+            color: #000;
+            .message{
+                .user-name{
+                    
+                }
+                .cell-phone-number{
+
+                }
+            }
+            .describe{
+                margin-top: rem(30);
+                color: #878787;
+                font-size: rem(26);
+            }
+        }
+        .icon-right{
+            line-height: rem(70);
+            .icon-youbian{
+                color: #ccc;
+                font-size: rem(40);
+            }
+        }
+    }
+    #lazy{
+        width: 100%;
+        margin-bottom: rem(10);
+    }
+    .order-shop-list{
+        background: #fff;
+        .title{
+            padding: rem(30) 0;
+            text-indent: 1em;
+            border-bottom: 1px solid #ccc;
+        }
+        .list{
+            .item{
+                display: flex;
+                justify-content: space-between;
+                padding: rem(30) rem(20);
+                .img-box{
+                    flex: 0 0 25%;
+                    width: rem(160);
+                    height: rem(160);
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .item-message{
+                    margin-left: rem(15);
+                    font-size: rem(28);
+                    font-weight: bold;
+                    .title-price{
+                        margin-top: rem(15);
+                        display: flex;
+                        justify-content: space-between;
+                        color: #000;
+                        .item-title{
+
+                        }
+                        .price{
+                            margin-left: rem(20);
+                        }
+                    }
+                    .describe-count{
+                        display: flex;
+                        justify-content: space-between;
+                        color: #878787;
+                        margin-top: rem(30);
+                    }
+                }
+            }
+        }
+    }
+    .distribution-main{
+        margin-top: rem(20);
+        background: #fff;
+        .distribution-type{ 
+            padding: rem(30);
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #ccc;
+            .type{
+                color: #585858;
+            }
+        }
+        .remark-main{
+            padding: rem(30);
+            .remark{
+                outline: none;
+                border: none;
+                margin-left: rem(80);
+            }
+        }
+    }
+    .discount-main{
+        margin-top: rem(20);
+        background: #fff;
+        .discount-title{
+            padding: rem(20) rem(30);
+        }
+        .selection{
+            padding: 0 rem(30);
+            .selection-main{
+                margin-top: rem(50);
+                padding: rem(20) 0;
+                border-top: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+            }
+        }
+    }
+
+    .confirm-submit{
+        background: #fff;
+        margin-top: rem(20);
+        padding: rem(30) rem(30);
+        border-bottom: 1px solid #ccc;
+        .confirm-submit-main{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .confirm-main{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // padding: rem(30)
+        height: rem(120);
+        .confirm-main-text{
+            color: #8c2230;
+            height: 100%;
+            a{
+                 height: 100%;
+                button{
+                    padding: 0 rem(80);
+                    height: 100%;
+                    background: #bd2732;
+                    color: #fff;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

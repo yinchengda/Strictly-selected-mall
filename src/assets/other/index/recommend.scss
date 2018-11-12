@@ -1,0 +1,76 @@
+.recommend{
+    background: #fff;
+    margin-top:rem(15);
+    padding-bottom:rem(95); //底部高度
+    .title{
+        padding: rem(20) 0;
+        font-size: rem(32);
+        text-align: center;
+        .iconfont{
+            font-size: rem(30);
+        }
+    }
+    .recommend-main{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .recommend-item{
+            padding: rem(9);
+            margin-bottom: rem(32);
+            .img-box{
+                margin-left: rem(5);
+                width: rem(338);
+                border-radius: rem(5);
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .item-text{
+            position: relative;
+            .item-topices{
+                margin: rem(13) 0 rem(5) rem(5);
+                overflow:hidden;
+                text-overflow:ellipsis;
+                white-space:nowrap;
+                font-size: rem(32);
+                font-family: 400;
+                width: rem(300);
+            }
+            .item-describe{
+                overflow:hidden;
+                text-overflow:ellipsis;
+                white-space:nowrap;
+                width: rem(340);
+                font-size: rem(26);
+                margin: rem(3) 0 rem(5) rem(5);
+                color: #9a9a9a;
+            }
+            .item-price{
+                font-weight: 400;
+                font-size: rem(30);
+                color: #a21313;
+                margin-top: rem(20);
+                display: flex;
+                justify-content: space-between;
+                .price{
+
+                }
+                .out-of-print{
+                    color: #9a9a9a;
+                    font-size: rem(28);
+                }
+            }
+            .new-arryval{
+                position: absolute;
+                right: 0;
+                bottom: rem(5);
+                img{
+                    width: rem(110);
+                }
+            }
+        }
+    }
+}

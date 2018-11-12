@@ -1,0 +1,46 @@
+.confirm-payment{
+    background: #fff;
+    .confirm-main{
+        .confirm-item{
+            padding: rem(30);
+            display: flex;
+            border-bottom: 1px solid #fcfcfc;
+            .icon-box{
+                margin-top: rem(10);
+                .icon-qian{
+                    color: #c58e89;
+                    font-size: rem(50);
+                }
+                .icon-dizhi{
+                    font-size: rem(50);
+                    color: #7e98c0;
+                }
+            }
+            .order-message{
+                margin-left: rem(25);
+                .shop-all-price{
+                    font-size: rem(34);
+                    .price{
+                        color: #9b343c;
+                    }
+                }
+                .order-num{
+                    font-size: rem(27);
+                    margin-top: rem(12);
+                    color: #9c9c9c;
+                }
+            }
+        }
+    }
+    .foot{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #b4292e;
+        color: #fff;
+        padding: rem(30) 0;
+        font-size: rem(30);
+        text-align: center;
+    }
+}

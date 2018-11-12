@@ -1,0 +1,31 @@
+.classify-top{
+    background: #fff;
+    padding: rem(16);
+    border-bottom: 1px solid #f5f5f5;
+    .search-box{
+        display: inline-block;
+        background: #f7f7f7;
+        width: rem(530);
+        height: rem(50);
+        position: relative;
+        border-radius: rem(10);
+        padding: rem(5);
+        overflow: hidden;
+        .iconfont{
+            position: absolute;
+            font-size: rem(35);
+            left: rem(30);
+            top: rem(10)
+        }
+        .search-inp{
+            border: none;
+            outline: none;
+            background: #f7f7f7;
+            margin-left: rem(30);
+            height: 100%;
+            width: 100%;
+            text-indent: 2em;
+            line-height: rem(-10)
+        }
+    }
+}

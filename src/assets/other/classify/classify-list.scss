@@ -1,0 +1,20 @@
+.classify-left{
+    background: #fff;
+    border-right: 1px solid #ebe9e9;
+    text-align: center;
+    width: 25%;
+    float: left;
+    height: 100%;
+    ul{
+        height: 100%;
+        li{
+            color: 0c0b10;
+            font-size: rem(30);
+            padding: rem(35) 0;
+        }
+        .active{
+            color: #b51d29;
+            border-left: rem(2) solid #b51d29;
+        }
+    }
+}

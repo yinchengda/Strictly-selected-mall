@@ -1,0 +1,28 @@
+.classify-content{
+    float:left;
+    width:69.4%;
+    padding:rem(20);
+    overflow:scroll;
+    background: #fff;
+    .list-main{
+        height: 100%;
+        ul{
+            text-align:center;
+            display:flex;
+            justify-content:space-between;
+            flex-wrap:wrap;
+            height: 100%;
+            li{
+                padding:rem(20);
+                // height: rem(180);//设了高发现并没有什么作用 ╮(╯▽╰)╭  令人厌恶的静态页面 
+                overflow: hidden;
+                img{
+                    width:rem(130);
+                }
+                .describe{
+                    font-size:rem(30)
+                }
+            }
+        }
+    }
+}

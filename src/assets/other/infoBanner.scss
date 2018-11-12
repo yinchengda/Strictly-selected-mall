@@ -1,0 +1,42 @@
+.info-banner{
+    background: #fff;
+    img{
+        width: 100%;
+        height: rem(600);
+    }
+    .swiper-pagination-bullet{
+        width: rem(15);
+        border-radius: rem(2);
+        height:rem(10);
+        background: #beb3ab;
+    }
+    .swiper-pagination-bullet-active{
+        border-radius: rem(3);
+        width: rem(20);
+        height:rem(8);
+        background:#fff;
+    }
+
+    .back-icon{
+        position: fixed;
+        top: rem(22);
+        left: rem(15);
+        width: rem(50);
+        height: rem(50);
+        padding: rem(4);
+        z-index: 20;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        .iconfont{
+            text-align: center;
+            color: #333;
+            display: block;
+            font-size: rem(28);
+            width: rem(50);
+            height: rem(50);
+            line-height: rem(50);
+            border-radius: 50%;
+            background: #fff;
+        }
+    }
+}

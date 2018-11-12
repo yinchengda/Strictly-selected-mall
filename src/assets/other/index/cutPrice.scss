@@ -1,0 +1,77 @@
+.cutPrice{
+    margin: rem(20) 0;
+    background: #fff;
+    .title{
+        padding: rem(20) 0;
+        font-size: rem(32);
+        text-align: center;
+        .iconfont{
+            font-size: rem(30);
+        }
+    }
+    .cut-main{
+        .cut-item{
+            padding: 6px;
+            border-bottom: 1px solid #f2f2f2;
+            display: flex;
+            justify-content: space-between;
+            .cut-img{
+                width: rem(200);
+                border-radius: 6px;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .cut-textbox{
+                flex: 0 0 69.5%;
+                position: relative;
+                .textbox-title{
+                    letter-spacing: rem(1.5);
+                    font-weight: 400;
+                    font-size: rem(30);
+                    margin: rem(3) 0 rem(16) 0;
+                }
+                .textbox-describe{
+                    color: #ababab;
+                    font-size: rem(20);
+                    margin: rem(3) 0 rem(20) 0;
+                }
+                .textbox-message{
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: rem(42);
+                    font-size: rem(28);
+                    line-height: rem(40);
+                    .message-price-main{
+                        flex: 0 0 16%;
+                        .price{
+                            font-weight: 200;
+                            font-size: rem(26);
+                            color: #a82323;
+                        }
+                    }
+                    .message-oldPrice{
+                        flex: 0 0 16%;
+                        color: #969696;
+
+                    }
+                    .message-count{
+                        flex: 0 0 16%;
+                        color: #969696;
+
+                    }
+                }
+                .new-arryval{
+                    position: absolute;
+                    right: 0;
+                    top: rem(5);
+                    img{
+                        width: rem(110);
+                    }
+                }
+            }
+        }
+    }
+}

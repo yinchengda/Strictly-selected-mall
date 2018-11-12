@@ -1,0 +1,64 @@
+.buy-template{
+    margin-top: rem(140);
+    background: #fff;
+    .buy-template-title{
+       border-bottom: 1px solid #f2f2f2;
+       padding: rem(20) 0; 
+       display: flex;
+       justify-content: center;
+       align-items: center;
+        .title-txt{
+           font-size: rem(30); 
+           margin: 0 rem(10);
+        }
+        .icon-handodown{
+            font-size: rem(35);
+            color:#ffc138; 
+        }
+        .icon-jiantouyoubian{
+            margin-left: rem(20);
+            font-size: rem(35)
+        }
+    }
+    .buy-template-main{
+        display: flex;
+        flex-wrap: wrap;
+        .buy-item{
+            flex: 0 0 45%;
+            padding:rem(16);
+            .buy-item-title{
+                color: #242424;
+                font-size: rem(28);
+            }
+            .buy-content{
+                display: flex;
+                .text{
+                    margin: rem(15) 0;
+                    p{
+                        font-size: rem(25);
+                        color: #b6b6b6;
+                    }
+                    span{
+                        display: inline-block;
+                        margin: rem(8) 0;
+                        padding: rem(6);
+                        border-radius: rem(5);
+                        background: #b3a174;
+                        color: #fff;
+                        font-size: rem(22);
+                    }
+                }
+                .img-box{
+                    width: rem(250);
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+        .buy-item:nth-of-type(odd){
+            border-right: 1px solid #ccc;
+        }
+    }
+}

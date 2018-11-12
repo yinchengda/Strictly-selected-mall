@@ -1,0 +1,31 @@
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    ul{
+        height: rem(80);
+        padding: rem(15);
+        background: #fff;
+        display: flex;
+        justify-content: space-around;
+        li{
+            text-align: center;
+            a{
+                line-height: rem(45);
+                color: #717171;
+                span{
+                    // color: #333;
+                }
+                i{
+                    display: block;
+                }
+                .iconfont{
+                    font-size: rem(55);
+                }
+            }
+            .router-link-active{
+                color: #ab2b2b;
+            }
+        }
+    }
+}

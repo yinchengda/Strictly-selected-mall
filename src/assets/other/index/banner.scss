@@ -1,0 +1,24 @@
+.index-banner{
+    img{
+        width: 100%;
+        height: rem(700);
+    }
+    .swiper-pagination{
+        bottom: rem(55)!important;
+        .swiper-pagination-custom{
+            // bottom: 30px; //无效
+        }
+        .swiper-pagination-bullet{
+            width: rem(10);
+            border-radius: rem(2);
+            height:rem(5);
+            background: #beb3ab;
+        }
+        .swiper-pagination-bullet-active{
+            border-radius: rem(5);
+            width: rem(15);
+            height:rem(5);
+            background:#fff;
+        }
+    }
+}

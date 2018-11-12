@@ -1,0 +1,94 @@
+.shop-data-list{
+    .shop-item{
+        background: #fff;
+        padding: rem(25) rem(15);
+        display: flex;
+        .checked-box{
+            line-height: rem(200);
+            input{
+                outline: none;
+                margin-top: rem(80);
+                -webkit-appearance:none;
+                width: rem(56);
+                height: rem(56);
+                background: url('/static/圈圈.png') no-repeat;
+                background-size:100% 100%;
+            }
+            input:checked{
+                background: url();
+                background-color: #b8282e;
+                background-image: url('/static/对号.png');
+                background-size: 110%;
+                background-position:rem(59) 0;//不好使 -.-
+                // content: "\2714";//不是对号吗 -.-
+                color: #fff;
+                width: rem(56);
+                height: rem(56);
+                border-radius: 50%;
+                
+            }
+        }
+        .shop-message{
+            display: flex;
+            .img-box{
+                width: rem(200);
+                height: rem(190);
+                border-top-left-radius: rem(12);
+                border-top-right-radius: rem(12);
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .shop-text{
+            margin-left: rem(25);
+            .shop-title{
+                margin-top: rem(20);
+                overflow:hidden;
+                text-overflow:ellipsis;
+                white-space:nowrap;
+                width: rem(410);
+                font-size: rem(30)
+            }
+            .shop-type{
+                font-size: rem(28);
+                color: #8A8A8A;
+                margin: rem(30) 0;
+            }
+            .shop-price-action{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .price{
+                    font-size: rem(30);
+                    color: #8D080C;
+                }
+                .action-box{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: rem(35);
+                    margin-right: rem(20);
+                    .shop-minus{
+                        padding:rem(5) rem(15);
+                        border: 1px solid #BFBFBF;
+                        background: #fff;
+                        border-right: none;
+                    }
+                    .shop-count{
+                        display: inline-block;
+                        padding:rem(5) rem(25);                        
+                        border: 1px solid #BFBFBF;
+                        border-right: none;
+                    }
+                    .add{
+                        border: 1px solid #BFBFBF;
+                        padding:rem(5) rem(15);
+                    }
+                }
+            }
+        }
+    }
+}

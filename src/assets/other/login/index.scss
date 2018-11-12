@@ -1,0 +1,67 @@
+#login{
+    background: #fff;
+    .login-main{
+        font-size: rem(35);
+        padding: 0 rem(45);
+        input{
+            outline: none;
+            border: none;
+        } 
+        .login-from{
+            color: #222;
+            margin: rem(60) 0 rem(30) 0;
+            .user-id-box{
+                padding-bottom:rem(20);
+                border-bottom:1px solid #efefef;
+                .user-id{
+                    width: 100%;
+                }
+            }
+            .password-box{
+                border-bottom:1px solid #efefef;
+                margin-top: rem(60);
+                padding-bottom:rem(20);
+                .password{
+
+                }
+            }
+        }
+
+        .btn-box{
+            text-align: center;
+            button{
+                width: 100%;
+                height: rem(100.02);
+                border-radius: rem(50);
+                margin: rem(20) 0;
+            }
+            .login-btn{
+                background: #FBB6B3;
+                color: #fff;
+            }
+            .one-key-login{
+                background: #fff;
+                color: #FF3214;
+                border: #FF3214 1px solid;
+            }
+            .active{
+                background: #F30500;
+            }
+        }
+        
+        .login-sub{
+            margin-top: rem(20);
+            color: #999999;
+            font-size: rem(28);
+            display: flex;
+            justify-content: space-between;
+            .message-login{
+
+            }
+            .num-register{
+
+            }
+        }
+
+    }
+}

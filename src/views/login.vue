@@ -1,0 +1,57 @@
+<template>
+    <div id="login">
+        <Head>用户登录</Head>
+        <div class="login-main">
+            <div class="login-from">
+                <div class="user-id-box">
+                    <input type="text"  class="user-id" v-model="userId" placeholder="用户名/邮箱/已验证手机">
+                </div>
+                <div class="password-box">
+                    <input type="password" class="user-password" v-model="userPas" placeholder="请输入密码"> | 忘记密码
+                </div>
+            </div>
+            <div class="btn-box">
+                <button :class="userId.length&userPas.length?'login-btn active':'login-btn'"  @click="loginFn" :disabled="!(userId.length&userPas.length)">登陆</button>
+                <button class="one-key-login">一键登录</button>
+            </div>
+            <div class="login-sub">
+                <span class="message-login">短信验证码登陆</span>
+                <span class="num-register">手机快速注册</span>
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+import axios from 'axios';
+import Head from '@/components/common/header';
+import router from '../router';
+export default {
+    data(){
+        return{
+            a:false,
+            userId:'13500000000',
+            userPas:'123',
+            fromPath:''
+        }
+    },
+    created(){
+        router.beforeEach((to,from,next) => {
+            console.log(to)
+        })
+    },
+    components:{
+        Head
+    },
+    methods:{
+        loginFn(){
+            axios.post('https://api.it120.cc/small4/user/m/login/','mobile='+this.userId+'&pwd='+this.userPas+'&deviceId=123321&deviceName=HEIWEI')
+            .then(res => {
+                alert('登陆成功!');
+                this.$store.commit('setUserToken',res.data.data.token);//保存token
+                this.$router.push(this.fromPath)
+            })
+            
+        }
+    }
+}
+</script>
