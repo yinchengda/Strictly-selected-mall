@@ -82,6 +82,10 @@ const router = new Router({
       component:()=>import('@/views/login')
     },
     {
+      path:'/myOrderList',
+      component:()=>import('@/views/myOrderList')
+    },
+    {
       path: '*',
       redirect: (to) => {
         if (to.path === '/') {

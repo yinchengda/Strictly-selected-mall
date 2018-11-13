@@ -1,17 +1,19 @@
 <template>
     <div class="shopDataInfo">
         <Banner />
-        <ShopInfo /> 
+        <CutShopInfo />
     </div>
 </template>
 <script>
 import Banner from '@/components/common/infoBanner';
-import ShopInfo from '@/components/shop-info-views/shop';
-
+import CutShopInfo from '@/components/shop-info-views/cutShop';
 export default {
     components:{
         Banner,
-        ShopInfo
+        CutShopInfo
+    },
+    mounted(){
+       
     }
 }
 </script>

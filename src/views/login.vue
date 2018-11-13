@@ -36,7 +36,8 @@ export default {
     },
     created(){
         router.beforeEach((to,from,next) => {
-            console.log(to)
+            // console.log(to)
+            next()
         })
     },
     components:{
@@ -48,7 +49,8 @@ export default {
             .then(res => {
                 alert('登陆成功!');
                 this.$store.commit('setUserToken',res.data.data.token);//保存token
-                this.$router.push(this.fromPath)
+                // this.$router.push(this.fromPath)
+                this.$router.push('/index/user')
             })
             
         }

@@ -2,11 +2,14 @@
     display: flex;
     justify-content: space-between;
     background: #fff;
-    padding: rem(20) 0;
+    padding: rem(20) rem(10);
     font-size: rem(35);
     border-bottom: 1px solid #ddd;
+    position: absolute;
+    width: 97%;
+    z-index: 20;
     .compile{
-        
+        color: #BA2832;
     }
     .head-title{
 

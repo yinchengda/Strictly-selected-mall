@@ -3,6 +3,8 @@
     padding: rem(60) rem(30) rem(20) rem(30);
     background: url('/static/user_bg.png') no-repeat;
     background-size: 100%;
+    position: relative;
+    
     .user-message{
         display: flex;
         .user-message-img{
@@ -31,6 +33,21 @@
                 border-radius: rem(10);
                 background: #b2a078;
             }
+        }
+    }
+    #user-prompt{
+        position: absolute;
+        width: rem(500);
+        height: rem(100);
+        top: rem(40);
+        left: rem(160);
+        background: url('/static/prompt.png') no-repeat;
+        background-size: 100% 100%;
+        >p{
+            margin-top: rem(40);
+            margin-left: rem(180);
+            font-size: rem(30);
+            color: red;
         }
     }
 }

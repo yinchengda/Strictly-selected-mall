@@ -17,6 +17,7 @@
                </div>
                <div class="icon-right">
                    <i class="iconfont icon-dingdan"></i>
+                   <span class="del" @click="removeSite(item.id)">×</span>
                </div>
            </div>
        </div>
@@ -42,14 +43,30 @@ export default {
     },
     created(){
         let token = this.$store.state.token;
-        // console.log(token)
         if(!token){
             this.$router.push('/login')
         }else{
+            this.getSiteData(token)
+        }
+    },
+    methods:{
+        removeSite(id){
+            // alert('假装删除成功！');
+            console.log(id);
+            // let token = this.$store.state.token;
+            // console.log(token)
+            // axios.post('https://api.it120.cc/small4/user/shipping-address/delete'+
+            // '?token=fea830fc-93ff-4c35-a28b-588598ee0f53'+
+            // '&id='+id
+            // ).then(res => {
+            //     alert('删除成功！');
+            //     this.getSiteData(token)
+            // })
+        },
+        getSiteData(token){
             axios.post('https://api.it120.cc/small4/user/shipping-address/list/','token='+token)
             .then(res => {
                 this.siteData=res.data.data;
-                // console.log(this.siteData)
             })
         }
     }

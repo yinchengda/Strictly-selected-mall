@@ -40,12 +40,18 @@
                        <input type="text" v-model="userCode" placeholder="">
                    </td>
                </tr>
+               <tr>
+                   <td class="site-key"></td>
+                   <th class="site-value">
+                       <input type="checkbox" v-model="isDefault"/>设为默认地址
+                   </th>
+               </tr>
        </table>
        <button class="save-site" @click="addSite">保存</button>
-       <button disabled="disabled">删除啊||ヽ(*￣▽￣*)ノミ|Ю</button>
+       <!-- <button disabled="disabled">删除啊||ヽ(*￣▽￣*)ノミ|Ю</button> -->
        <button class="read-site">从微信读取</button>
        
-       <button class="clear">取消</button>
+       <button class="clear" @click="clear">取消</button>
 
     </div>
 </template>
@@ -58,7 +64,8 @@ export default {
             userName:'',
             userNum:'',
             userSite:'',
-            userCode:''
+            userCode:'',
+            isDefault:false
         }
     },
     components:{
@@ -67,6 +74,7 @@ export default {
     methods:{
         addSite(){
             let token = this.$store.state.token;
+            // console.log(token)
             if(this.userName!=''&this.userNum!=''&this.userSite!=''&this.userCode!=''){
                 axios.post('https://api.it120.cc/small4/user/shipping-address/add',
                 'address='+this.userSite+
@@ -75,16 +83,22 @@ export default {
                 '&linkMan='+this.userName+
                 '&mobile='+this.userNum+
                 '&provinceId=10'+
-                '&token='+token
+                '&token='+token+
+                '&isDefault='+this.isDefault
                 ).then(res => {
                     if(res.data.code==0){
                         alert('添加成功！')
                         this.$router.push('/mySite')
+                    }else{
+                        console.log(res);
                     }
                 })
             }else{
                 alert('信息不完善！')
             }
+        },
+        clear(){
+            window.history.back()
         }
     }
 }

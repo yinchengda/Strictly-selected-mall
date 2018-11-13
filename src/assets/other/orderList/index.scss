@@ -1,0 +1,85 @@
+#my-order-list{
+    #common-header{
+        background: #fff;
+    }
+    
+    #order-list-nav{
+        background: #fff;
+        display: flex;
+        justify-content: space-around;
+        font-size: rem(30);
+        text-align: center;
+        >span{
+            flex: 0 0 20%;
+            font-size: rem(30);
+            padding: rem(20) 0;
+        }
+        .active{
+            color: #A1342A;
+            border-bottom: rem(3) solid #812021;
+        }
+    }
+    
+    .order-main{
+        margin-top: rem(20);
+        .order-item{
+            color: #000;
+            background: #fff;
+            .order-title{
+                padding:rem(15) rem(20);
+                display: flex;
+                font-size: rem(26);
+                justify-content: space-between;
+                border-bottom: rem(3) solid #F7F7F7;
+                .order-time{
+                }
+                .order-status{
+                    color: #A1342A;
+                }
+            }
+            .order-number{
+                font-size: rem(26);
+                padding:rem(15) rem(20);
+                border-bottom: rem(3) solid #F7F7F7;
+            }
+            .item-order-message{
+                border-bottom: rem(3) solid #F7F7F7;
+                padding:rem(15) rem(20);
+                padding-bottom: rem(50);
+                width: rem(130);
+                height: rem(126);
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .order-item-foot{
+                font-size: rem(26);
+                padding:rem(15) rem(20);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .order-all-price{
+                    color: #702C36;
+                    font-size: rem(26)
+                }
+                .btn-box{
+                    button{
+                        background: #fff;
+                        padding:rem(16) rem(25);
+                        border-radius: rem(5);
+                    }
+                    .clear-order{
+                        border: 1px solid #BCBCBC;
+                        margin-right: rem(20);
+                        color: #949494
+                    }
+                    .pay-now-order{
+                        border: 1px solid #740B13;
+                        color: #740B13;
+                    }
+                }
+            }
+        }
+    }
+}

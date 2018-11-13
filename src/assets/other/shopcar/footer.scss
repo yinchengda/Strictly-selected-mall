@@ -1,0 +1,68 @@
+.shop-cart-footer{
+    width: 100%;
+    height: rem(100);
+    background: #fff;
+    position: fixed;
+    bottom: rem(110);
+    z-index: 12;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    .footer-left{
+        margin-left: rem(20);
+        font-size: rem(34);
+        input{
+            outline: none;
+            margin-top: rem(0);
+            -webkit-appearance:none;
+            width: rem(46);
+            height: rem(46);
+            background: url('/static/圈圈.png') no-repeat;
+            background-size:100% 100%;
+            vertical-align: middle;
+        }
+        input:checked{
+            background: url();
+            background-color: #b8282e;
+            background-image: url('/static/对号.png');
+            background-size: 110%;
+            background-position:rem(49) 0;//不好使 -.-
+            // content: "\2714";//不是对号吗 -.-
+            color: #fff;
+            width: rem(46);
+            height: rem(46);
+            border-radius: 50%;
+            
+        }
+    }
+    .footer-right{
+        display: flex;
+        align-items: center;
+        height: 100%;
+        // width: rem(400);
+        .all-price-box{
+            font-size: rem(30);
+            color: #BA2832;
+            margin-right: rem(20);
+            .price{
+
+            }
+        }
+        .down-order{
+            font-size: rem(35);
+            height: 100%;
+            width: rem(250);
+            button{
+                width: 100%;
+                height: 100%;
+                background: #CDCDCD;
+                color: #fff;
+            }
+            .active{
+                color: #fff;
+                background: #BA2832;
+            }
+        }
+    }
+    
+}

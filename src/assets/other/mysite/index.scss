@@ -2,6 +2,7 @@
     background: #fff;
     .my-site-list{
         .site-item{
+            background: #fff;
             display: flex;
             padding: rem(20);
             align-items: center;
@@ -46,6 +47,10 @@
                 .iconfont{
                     font-size: rem(50);
                     color: #797979;
+                }
+                .del{
+                    color: red;
+                    margin-left: rem(20);
                 }
             }
         }

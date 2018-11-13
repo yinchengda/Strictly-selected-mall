@@ -27,22 +27,22 @@
                 商品列表
             </div>
             <div class="list">
-                <div class="item">
+                <div class="item" v-for="(item,i) in shop" :key="i">
                     <div class="img-box">
-                        <img :src="shop.pic" />
+                        <img :src="item.pic" />
                     </div>
                     <div class="item-message">
                         <div class="title-price">
                             <p class="item-title">
-                            {{shop.name}}
+                            {{item.name}}
                             </p>
-                            <p class="price">￥{{shop.originalPrice}}</p>
+                            <p class="price">￥{{item.price}}</p>
                         </div>
                         <div class="describe-count">
                             <p class="describe">
-                                {{shop.recommendStatusStr}}
+                                {{item.describe}}
                             </p>
-                            <p class="count">×1</p>
+                            <p class="count">×{{item.number}}</p>
                         </div>
                     </div>
                 </div>
@@ -107,12 +107,13 @@ export default {
     data(){
         return{
             site:[],
-            shop:this.$store.state.shopInfo.shopInfoData.basicInfo
+            shop:this.$store.state.orderList
         }
     },
     components:{
         Head
     },
+    
     mounted(){
         let token = this.$store.state.token;
         if(!token){
@@ -125,22 +126,38 @@ export default {
                         this.site = ele;
                     }
                 })
-                // console.log(this.siteData)
+                if(!this.site.length){
+                    this.site = res.data.data[0];
+                }
             })
         }
     },
     methods:{
         submitOrder(){
+            let data = this.$store.state.orderList;
             let token = this.$store.state.token;
-            console.log([this.shop])
+            // console.log([this.shop])
             axios.post('https://api.it120.cc/small4/order/create?',
             'token='+token+
             '&goodsJsonStr='+
-            [...[this.shop]]+
+            JSON.stringify(data)+
             '&expireMinutes=80'
             )
             .then(res => {
-                console.log(res)
+                // console.log(res)
+                this.$store.commit('setOrderNum',res.data.data.orderNumber)
+            })
+
+            axios.post('https://api.it120.cc/small4/order/create?',
+            'token='+token+
+            '&goodsJsonStr='+
+            JSON.stringify(data)+
+            '&expireMinutes=80'+
+            '&calculate=true'
+            )
+            .then(res => {
+                // console.log(res)
+                this.$store.commit('setOrderAllPrice',res.data.data.amountTotle)
             })
         }
     }

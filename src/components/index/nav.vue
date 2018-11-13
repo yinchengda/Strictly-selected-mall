@@ -1,5 +1,5 @@
 <template>
-    <nav>
+    <nav id="index-nav">
         <ul>
             <li>
                 <i class="iconfont icon-qiandao-copy"></i>

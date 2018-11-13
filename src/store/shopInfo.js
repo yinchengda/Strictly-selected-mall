@@ -7,11 +7,18 @@ let{api} = global;
 export default function ShopInfo(){
     return {
         state:{
-            shopInfoData:[]
+            shopInfoData:[],
+            access_ok:false
         },
         mutations:{
             setShopData(state,data){
                 state.shopInfoData = data;
+            },
+            accessToggle(state){
+                state.access_ok = true;
+                setTimeout(() => {
+                    state.access_ok = false;
+                },1500)
             }
         },
         actions:{

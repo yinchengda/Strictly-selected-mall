@@ -30,6 +30,10 @@
                 color: #939393;
                 font-size: rem(25);
                 margin-bottom: rem(6);
+                overflow:hidden;
+                text-overflow:ellipsis;
+                white-space:nowrap;
+                width: rem(500);
             }
             .group-count{
                 font-size: rem(26);

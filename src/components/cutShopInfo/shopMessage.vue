@@ -29,8 +29,7 @@ export default {
         }
     },
     mounted(){
-        // let id = this.$route.params.id;
-       
+        // console.log(this.data)
     },
     computed:{
         data(){

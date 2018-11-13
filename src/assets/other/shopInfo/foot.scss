@@ -39,4 +39,20 @@
         display: block;
         border-radius: 50%;
     }
+    .seccuss-ok{
+        position: fixed;
+        top: 50%;
+        left: 38%;
+        margin-left: -rem(130);
+        width: rem(260);
+        height:rem(100);
+        text-align: center;
+        line-height: rem(100);
+        border-radius: rem(10);
+        z-index:5;
+        background: rgba(0,0,0,0.5);
+        color: #fff;
+        font-size: rem(30);
+        transition: .5s all ease;
+    }
 }

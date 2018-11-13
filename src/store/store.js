@@ -5,34 +5,63 @@ import axios from 'axios';
 import IndexData from './index';
 import ClassifyData from './classify';
 import ShopInfo from './shopInfo';
+import ShopCar from './shopCar';
 
 const indexData = IndexData();
 const classifyData = ClassifyData();
 const shopInfo = ShopInfo();
+const shopCar = ShopCar();
 
 Vue.use(Vuex);
 
 
 const store = new Vuex.Store({
     state:{
+        shopBtnTxt:'立即购买',
+        lazyShow:false,
         userName:'',
-        token:'',
+        token:'',//e7a49293-9f0c-45ef-965b-ebf3750fc5a0
+        orderList:[],
+        orderNum:'',
+        orderAllPrice:99
     },
     mutations:{
         setUserToken(state,token){
             state.token = token;
+            console.log(token)
+        },
+        toggleLazyShow(state,sl){
+            if(sl){
+                state.lazyShow = !state.lazyShow;
+                state.shopBtnTxt = '加入购物车'
+            }else{
+                state.lazyShow = !state.lazyShow
+                state.shopBtnTxt = '立即购买'
+            }
+        },
+        setOrderList(state,data){
+            if(!data.length){
+                state.orderList = [data];
+                return;
+            }
+            state.orderList = data;
+        },
+        setOrderNum(state,oredrnum){
+            state.orderNum = oredrnum;
+        },
+        setOrderAllPrice(state,price){
+            state.orderAllPrice = price;
         }
     },
-    actions:{
-
-    },
     getters:{
-        
+        _orderNum:state => state.orderNum,
+        _orderAllPrice:state => state.orderAllPrice
     },
     modules:{
         indexData,
         classifyData,
-        shopInfo
+        shopInfo,
+        shopCar
     }
 })
 

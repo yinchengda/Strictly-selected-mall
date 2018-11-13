@@ -54,4 +54,110 @@
         }
         
     }
+
+    .shop-type{
+        #shade{
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1;
+        }
+        .type-main{
+           position: fixed;
+           left: 0;
+           right: 0;
+           bottom: 0;
+           z-index: 2;
+           background: #fff;
+            padding: rem(20);
+            .shop-data{
+                display: flex;
+                position: relative;
+                border-bottom: 1px solid #f2f2f2;
+                .img-box{
+                    width: rem(166);
+                    height: rem(166);
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .text{
+                    font-size: rem(30);
+                    margin-left: rem(20);
+                    .title{
+                        margin-top: rem(20);
+                    }
+                    .price{
+                        display: inline-block;
+                        margin-top: rem(16);
+                        color: #a82442;
+                    }
+                }
+                .del{
+                    position: absolute;
+                    right: -20px;
+                    top: rem(20);
+                    font-size: rem(50);
+                }
+            }
+            .type-content{
+                font-size: rem(28);
+                margin-top: rem(50);
+                .type-box{
+                    .title{
+                        font-size: rem(32);
+                        padding: rem(30) 0;
+                        margin: rem(20) 0;
+                    }
+                    .item{
+                        color: #000;
+                        display: inline-block;
+                        margin: 0 rem(20);
+                        padding: rem(10);
+                        border: 1px solid #d6d6d6;
+                    }
+                    .active{
+                        border: 1px solid red;
+                    }
+                }
+            }
+            .count-box{
+                margin: rem(88) 0;
+                padding: 0 rem(20);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .box-sub{
+                    font-size: rem(32);
+                }
+                .count-action{
+                    font-size: rem(30);
+                    .minus{
+
+                    }
+                    .count{
+
+                    }
+                    .add{
+
+                    }
+                }
+            }
+            .foot{
+                display: block;
+                background: #c72d0f;
+                color: #fff;
+                font-size: rem(34);
+                text-align: center;
+                padding: rem(30) 0;
+            }
+        }
+       
+    }
+
+    
 }
