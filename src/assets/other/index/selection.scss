@@ -1,6 +1,7 @@
 .selection-topices{
     margin-top: rem(15);
     background: #fff;
+    // overflow: hidden;
     .title{
         padding: rem(20) 0;
         font-size: rem(32);
@@ -62,4 +63,8 @@
             }
         }
     }
+    .selection-main::-webkit-scrollbar {display:none}
+    .selection-main::-o-scrollbar {display:none}
+    .selection-main::-ms-scrollbar {display:none}
+    //火狐目前不支持 -.-
 }

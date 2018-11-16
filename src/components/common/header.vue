@@ -1,6 +1,6 @@
 <template>
     <header id="common-header">
-        <a @click='toBack'>
+        <a @click='toBack' id="to-back">
             <i class="iconfont icon-back"></i>
         </a>
         <slot>头部</slot>

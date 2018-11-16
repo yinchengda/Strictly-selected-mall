@@ -6,6 +6,7 @@
     </div>
 </template>
 <script>
+import axios from 'axios';
 import Top from '@/components/classify/classify-top';
 import List from '@/components/classify/classify-list';
 import Content from '@/components/classify/classify-content';

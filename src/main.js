@@ -3,6 +3,7 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
+import axios from 'axios';
 import global from './config/global';
 import store from './store/store.js';
 import VueLazyload from 'vue-lazyload';//图片懒加载
@@ -25,6 +26,7 @@ Vue.use(VueLazyload, {
 Vue.use(Navigation, {router})
 Vue.config.productionTip = false;
 /* eslint-disable no-new */
+// Vue.prototype.$axios = axios; //...
 new Vue({
   el: '#app',
   router,

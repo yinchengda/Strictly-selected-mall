@@ -30,7 +30,7 @@ export default {
         // },1000);
          //如何给它传参的时候实现回调...
         this.$store.dispatch("getShopInfo",data => {
-            console.log(data)
+            // console.log(data)
             setTimeout(()=>{
                 this.setSwiper();
             })

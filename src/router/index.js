@@ -14,6 +14,7 @@ import TopicInfo from '@/views/topicInfo';
 
 //商品详情
 import ShopInfo from '@/views/shopInfo';
+ 
 
 Vue.use(Router);
 
@@ -82,8 +83,16 @@ const router = new Router({
       component:()=>import('@/views/login')
     },
     {
-      path:'/myOrderList',
+      path:'/myOrderList/:type',
       component:()=>import('@/views/myOrderList')
+    },
+    {
+      path:'/signIn',
+      component:()=>import('@/views/signIn')
+    },
+    {
+      path:'/discount',
+      component:()=>import('@/views/discountCoupon')
     },
     {
       path: '*',

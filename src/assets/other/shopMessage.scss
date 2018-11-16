@@ -98,10 +98,10 @@
                     }
                 }
                 .del{
-                    position: absolute;
-                    right: -20px;
-                    top: rem(20);
-                    font-size: rem(50);
+                    position:absolute;
+                    right:rem(10);
+                    top:0;
+                    font-size:rem(50);
                 }
             }
             .type-content{
@@ -119,6 +119,7 @@
                         margin: 0 rem(20);
                         padding: rem(10);
                         border: 1px solid #d6d6d6;
+                        margin-bottom: rem(20);
                     }
                     .active{
                         border: 1px solid red;

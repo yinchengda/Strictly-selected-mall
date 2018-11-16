@@ -31,45 +31,58 @@
                 </div>
             </div>
         </div>
-        <div class="foot">
+        <div class="foot" @click="ok">
             微信支付￥{{orderAllPrice}}
         </div>
     </div>
 </template>
 <script>
-import Head from '@/components/common/header';
 import axios from 'axios';
+import Head from "@/components/common/header";
 export default {
-    data(){
-        return{
-            site:[]
-        }
+  data() {
+    return {
+      site: []
+    };
+  },
+  components: {
+    Head
+  },
+  computed: {
+    orderNum() {
+      return this.$store.getters._orderNum;
     },
-    components:{
-        Head
-    },
-    computed:{
-        orderNum(){
-            return this.$store.getters._orderNum;
-        },
-        orderAllPrice(){
-            return this.$store.getters._orderAllPrice
-        }
-    },
-    mounted(){
-        let token = this.$store.state.token;
-        axios.post('https://api.it120.cc/small4/user/shipping-address/list/','token='+token)
-            .then(res => {
-                res.data.data.forEach(ele => {
-                    if(ele.isDefault){
-                        this.site = ele;
-                    }
-                })
-                if(!this.site.length){
-                    this.site = res.data.data[0];
-                }
-            })
+    orderAllPrice() {
+      return this.$store.getters._orderAllPrice;
     }
-
-}
+  },
+  mounted() {
+    let token = this.$store.state.token;
+    axios
+      .post(
+        "https://api.it120.cc/small4/user/shipping-address/list/",
+        "token=" + token
+      )
+      .then(res => {
+        let siteNullDefault = true;
+        // console.log(res.data.data)
+        res.data.data.forEach(ele => {
+          // console.log(ele)
+          if (ele.isDefault) {
+            siteNullDefault = false;
+            this.site = ele;
+          }
+        });
+        if (siteNullDefault) {
+          this.site = res.data.data[0];
+        }
+      });
+  },
+  methods: {
+    ok() {
+      alert("付款成功！");
+      this.$router.push("/myOrderList/0");
+    }
+  }
+};
 </script>

@@ -1,0 +1,132 @@
+#discount-coupon{
+    background: #fff;
+    >#common-header{
+        border:none;
+        background: #ddd;
+        height: rem(400)
+    }
+    #to-back{
+        position: fixed;
+        top: rem(22);
+        left: rem(15);
+        width: rem(60);
+        height: rem(60);
+        padding: rem(4);
+        z-index: 20;
+        border: 1px solid #fff;
+        border-radius: 50%;
+    .iconfont{
+        text-align: center;
+        color: #333;
+        display: block;
+        font-size: rem(32);
+        color: #000;
+        font-weight: bolder;
+        width: rem(60);
+        height: rem(60);
+        line-height: rem(60);
+        border-radius: 50%;
+        background: #fff;
+    }
+    }
+    
+    .discount-main{
+        padding:  0 rem(38);
+        .discount-inp{
+            padding: rem(42);
+            border: rem(3) solid #fab751;
+            font-size: rem(31);
+            border-radius: rem(10);
+            >input{
+                outline: none;
+                border-radius: rem(10);
+                border: rem(3) solid #fab751;
+                padding: rem(20);
+            }
+            /* webkit内核 */
+            ::-webkit-input-placeholder{
+                color: #fab751;
+            }
+            /* Firefox 18- */
+            :-moz-placeholder{
+                color: #fab751;
+            }
+            /* Firefox 19+ */
+            ::-moz-placeholder{
+                color: #fab751;
+            }
+            /* IE?- */
+            :-ms-input-placeholder{
+                color: #fab751;
+            }
+
+            >button{
+                background: #f17876;
+                color: #fff;
+                border-radius: rem(10);
+                padding: rem(20);
+            }
+        }
+        .discount-item{
+            margin: rem(20) 0;
+            border-radius: rem(10);
+            background: url('/static/bg_discount.png') no-repeat;
+            background-size: 100% 100%;
+            .discount-message{
+                padding: rem(30) rem(20);
+                padding-bottom: rem(60);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color:#fff; 
+                white-space:nowrap;
+
+                .discount-price{
+                    margin-top: rem(30);
+                    margin-left: rem(20);
+                    font-size: rem(30);
+                    .price{
+                        margin-right: rem(20);
+                        font-size: rem(60);
+                    }
+                }
+                .discount-item-text{
+                    margin-left: rem(46);
+                    margin-top: rem(30);
+                    .discount-descirbe{
+                        white-space:nowrap;
+                        font-size: rem(30);
+                    }
+                    .use-condition{
+                        margin-top: rem(20);
+                        font-size: rem(24);
+                    }
+                }
+                .discount-item-right{
+                    margin-left: rem(62);
+                    margin-top: rem(50);
+                    font-size: rem(24);
+                    a{
+                        span{
+                            white-space:nowrap;
+                            padding: rem(10) rem(18);
+                            background: #fbe9e7;
+                            border-radius: rem(6);
+                            color: #c37e84;
+                        }
+                        .bug{
+                            margin-left: -1rem;
+                        }
+                    }
+                }
+            }
+            .discount-indate{
+                
+                font-size: rem(26);
+                color: #fff;
+                padding: rem(24);
+            }
+        }
+    }
+
+}

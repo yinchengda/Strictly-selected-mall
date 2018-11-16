@@ -2,12 +2,16 @@
     <nav id="index-nav">
         <ul>
             <li>
-                <i class="iconfont icon-qiandao-copy"></i>
-                <p>签到</p>
+                <router-link to="/signIn">
+                    <i class="iconfont icon-qiandao-copy"></i>
+                    <p>签到</p>
+                </router-link>
             </li>
             <li>
-                <i class="iconfont icon-huangguan"></i>
-                <p>礼券</p>
+                <router-link to="/discount">
+                    <i class="iconfont icon-huangguan"></i>
+                    <p>礼券</p>
+                </router-link>
             </li>
             <li>
                 <router-link to="/moduleInfo/cutPrice">

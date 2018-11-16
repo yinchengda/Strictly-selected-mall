@@ -1,3 +1,16 @@
+// Array.prototype.remove=function(dx) 
+// { 
+//   if(isNaN(dx)||dx>this.length){return false;} 
+//   for(var i=0,n=0;i<this.length;i++) 
+//   { 
+//     if(this[i]!=this[dx]) 
+//     { 
+//       this[n++]=this[i] 
+//     } 
+//   } 
+//   this.length-=1 
+// }
+
 export default function ShopCar(){
     return {
         state:{
@@ -17,11 +30,14 @@ export default function ShopCar(){
                 localStorage.setItem('shopData',JSON.stringify(state.shopDataList));
             },
             addShoppingCart(state,shop){
+                //判断购物车中是否存在要添加商品，如果存在，则只加数量；不存在则push
+                //一些问题：
+                //同样的商品 不同的规格 是否需要新建一个对象-.-
                 let some = true;
                 state.shopDataList.forEach(ele => {
                     if(ele.goodsId == shop.goodsId){
                         some = false;
-                        ele.number++;
+                        ele.number+=shop.number;
                     }
                 })
                 if(some){
@@ -75,6 +91,7 @@ export default function ShopCar(){
                         if(ele.checked){
                             // console.log(state.shopDataList.indexOf(ele));
                             state.shopDataList.splice(state.shopDataList.indexOf(ele),1);
+                            // state.shopDataList.remove(state.shopDataList.indexOf(ele));
                         }
                     })
                     this.commit('setLocationShopData')

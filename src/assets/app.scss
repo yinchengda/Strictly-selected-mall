@@ -65,6 +65,20 @@
 //orderList
 @import './other/orderList/index.scss';
 
+@import './other/signIn/index.scss';
+
+@import './other/discountCoupon/index.scss';
+
+*{
+moz-user-select: -moz-none;
+-moz-user-select: none;
+-o-user-select:none;
+-khtml-user-select:none;
+-webkit-user-select:none;
+-ms-user-select:none;
+user-select:none;
+
+}
 ul,ol,li,h1,h2,h3,h4,h5,h6,p{
     margin: 0;
     padding: 0;

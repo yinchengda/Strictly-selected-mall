@@ -83,7 +83,7 @@
                     商品金额
                 </span>
                 <span>
-                    ￥{{shop.originalPrice}}
+                    ￥{{orderAllPrice}}
                 </span>
             </div>
         </div>
@@ -92,7 +92,7 @@
             <span></span>
             <span></span>
             <div class="confirm-main-text">
-                合计：￥{{shop.originalPrice}}
+                合计：￥{{orderAllPrice}}
                 <router-link to="/confirmPayment">
                     <button @click="submitOrder">提交订单</button>
                 </router-link>
@@ -102,64 +102,79 @@
 </template>
 <script>
 import axios from 'axios';
+
+import qs from 'qs';
 import Head from '@/components/common/header';
 export default {
+    components:{
+        Head
+    },
     data(){
         return{
             site:[],
             shop:this.$store.state.orderList
         }
     },
-    components:{
-        Head
+    computed:{
+        orderAllPrice(){
+            return this.$store.getters._orderAllPrice
+        }
     },
-    
     mounted(){
         let token = this.$store.state.token;
-        if(!token){
-            this.$router.push('/login')
-        }else{
-            axios.post('https://api.it120.cc/small4/user/shipping-address/list/','token='+token)
+        let data = this.$store.state.orderList;
+            //默认地址
+            axios.post('https://api.it120.cc/small4/user/shipping-address/list/',
+            'token='+token)
             .then(res => {
+                let siteNullDefault=true;
+                // console.log(res.data.data)
                 res.data.data.forEach(ele => {
+                    // console.log(ele)
                     if(ele.isDefault){
+                        siteNullDefault = false;
                         this.site = ele;
                     }
                 })
-                if(!this.site.length){
+                if(siteNullDefault){
                     this.site = res.data.data[0];
                 }
             })
-        }
+
+            // console.log(qs.stringify(data))
+            // console.log(this.clearBr(JSON.stringify(data)))
+            
     },
     methods:{
         submitOrder(){
             let data = this.$store.state.orderList;
             let token = this.$store.state.token;
+            // console.log(token);
+            console.log(JSON.stringify(data));
             // console.log([this.shop])
-            axios.post('https://api.it120.cc/small4/order/create?',
+            //创建订单
+            axios.post('https://api.it120.cc/small4/order/create/',
             'token='+token+
             '&goodsJsonStr='+
-            JSON.stringify(data)+
+            `${this.clearBr(JSON.stringify(data))}`+
             '&expireMinutes=80'
             )
             .then(res => {
                 // console.log(res)
-                this.$store.commit('setOrderNum',res.data.data.orderNumber)
-            })
+                if(res.data.code === 0){
+                    this.$store.commit('setOrderNum',res.data.data.orderNumber)
+                }else{
+                    console.error('创建订单失败，\n'+res.data.msg)
+                }
+            })    
+        },
+        clearBr(key) { 
+            key = key.replace(/<\/?.+?>/g,""); 
+            key = key.replace(/[\r\n]/g, ""); 
+            return key; 
+        } 
 
-            axios.post('https://api.it120.cc/small4/order/create?',
-            'token='+token+
-            '&goodsJsonStr='+
-            JSON.stringify(data)+
-            '&expireMinutes=80'+
-            '&calculate=true'
-            )
-            .then(res => {
-                // console.log(res)
-                this.$store.commit('setOrderAllPrice',res.data.data.amountTotle)
-            })
-        }
+
     }
 }
 //To strive, to seek, to find, and not to yield.

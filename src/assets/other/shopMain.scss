@@ -23,9 +23,14 @@
                 flex: 0 0 100%;
             }
         }
+        // img{
+        //     font-size: 0;
+        // }
         p{
             width: 100%;
             img{
+                display: block;
+                font-size: 0;
                 width: 100%!important;
             }
         }

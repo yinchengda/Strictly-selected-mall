@@ -9,11 +9,13 @@
             </div>
             <div class="user-message-text">
                 <p class="userName">吃瓜群众</p>
-                <span class="integral">积分：100</span>
+                <router-link to="/signIn">
+                    <span class="integral">积分：100</span>
+                </router-link>
             </div>
         </div>
         <div id="user-prompt">
-            <p>你已经登陆了</p>
+            <p id="yiLogin">你已经登陆了</p>
         </div>
     </div>
 </template>

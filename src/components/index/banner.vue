@@ -33,7 +33,7 @@ export default {
         swiperFn(){
            setTimeout(()=>{
               let indexBanner =  new Swiper('.index-banner',{
-            // loop:true,
+            loop:true,
             pagination:{
                 el:'.swiper-pagination'
             },

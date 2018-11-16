@@ -19,6 +19,13 @@
             }
         }
     }
+    .top::-webkit-scrollbar {display:none}
+    .top::-o-scrollbar {display:none}
+    .top::-ms-scrollbar {display:none}
+    // .top::-firefox-scrollbar {display:none}
+    //火狐目前不支持-.-
+
+    
     .list-data{
         .data-box{
             padding: rem(20);

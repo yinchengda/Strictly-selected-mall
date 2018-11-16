@@ -16,7 +16,9 @@ export default {
         Foot
     },
     mounted(){
-        this.$store.dispatch('getShopDataList');
+        this.$store.dispatch('getShopDataList');//获取商品列表
+
+        //下滚显示头部 (淡入淡出)
         var head = document.getElementById('index-header');
         var img = document.getElementById('index-header-img');        
         let _this = this;

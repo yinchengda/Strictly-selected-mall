@@ -23,7 +23,7 @@ const store = new Vuex.Store({
         token:'',//e7a49293-9f0c-45ef-965b-ebf3750fc5a0
         orderList:[],
         orderNum:'',
-        orderAllPrice:99
+        orderAllPrice:'木有计算完'
     },
     mutations:{
         setUserToken(state,token){
@@ -45,6 +45,7 @@ const store = new Vuex.Store({
                 return;
             }
             state.orderList = data;
+            // console.log(JSON.stringify(state.orderList));
         },
         setOrderNum(state,oredrnum){
             state.orderNum = oredrnum;

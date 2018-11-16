@@ -6,7 +6,6 @@
                 <p class="txt">我的余额</p>
                 <p class="money">0元</p>
             </a>
-            
         </div>
         <div class="tool-item tool-cutprice">
             <a href="javascript:">
@@ -15,10 +14,10 @@
             </a>
         </div>
         <div class="tool-item tool-Coupons">
-            <a href="javascript:">
+            <router-link to="/discount">
                 <i class="iconfont icon-jieritouziliquan Coupons"></i>
                 <p class="txt">我的礼券</p>
-            </a>
+            </router-link>
         </div>
         <div class="tool-item tool-collect">
             <a href="javascript:">

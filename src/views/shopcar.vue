@@ -8,6 +8,7 @@
     </div>
 </template>
 <script>
+
 import Head from '@/components/shopcar/head';
 import ShopDataNull from '@/components/shopcar/shopData_null';
 import ShopData from '@/components/shopcar/shopData';

@@ -36,16 +36,17 @@
         }
     }
     #user-prompt{
-        position: absolute;
+        position: fixed;
         width: rem(500);
         height: rem(100);
-        top: rem(40);
-        left: rem(160);
+        top: rem(80);
+        left: rem(220);
         background: url('/static/prompt.png') no-repeat;
         background-size: 100% 100%;
+        // background-color: #fff;
         >p{
-            margin-top: rem(40);
-            margin-left: rem(180);
+            margin-top: rem(25);
+            margin-left: rem(220);
             font-size: rem(30);
             color: red;
         }
