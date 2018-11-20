@@ -1,54 +1,39 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-//主体
-import Index from '@/views/index'; //首页
-import IndexView from '@/views/index-view'; //默认显示
-import Classify from '@/views/classify';
-import ShopCar from '@/views/shopcar';
-import User from '@/views/user';
-
-//专题、商品列表详情
-import ModuleInfo from '@/views/moduleInfo';
-import TopicInfo from '@/views/topicInfo';
-
-//商品详情
-import ShopInfo from '@/views/shopInfo';
- 
-
 Vue.use(Router);
 
 const router = new Router({
-  mode:'history', //嘿斯吹模式. [^/#/g]
+  // mode:'history', //嘿斯吹模式. [^/#/g]
   routes: [
     {
       path: '/index',
       name: 'Index',
-      component:Index,
+      component:()=>import('@/views/index'),
       meta:{keepAlive:true},
       children:[
         {
           path:'/index',
-          component:IndexView,
+          component:()=>import('@/views/index-view'),
           meta:{keepAlive:true}
         },
         {
           path:'/index/classify',
-          component:Classify
+          component:()=>import('@/views/classify')
         },
         {
           path:'/index/shopcar',
-          component:ShopCar
+          component:()=>import('@/views/shopcar')
         },
         {
           path:'/index/user',
-          component:User
+          component:()=>import('@/views/user')
         }
       ]
     },
     {
       path:'/moduleInfo/:type',
-      component:ModuleInfo
+      component:()=>import('@/views/moduleInfo')
     },
     {
       path:'/cutShopInfo/:id',
@@ -56,11 +41,11 @@ const router = new Router({
     },
     {
       path:'/shopInfo/:id',
-      component:ShopInfo
+      component:()=>import('@/views/shopInfo')
     },
     {
       path:'/topic/:id',
-      component:TopicInfo
+      component:()=>import('@/views/topicInfo')
     },
     {
       path:'/confirmOrder',
@@ -93,6 +78,22 @@ const router = new Router({
     {
       path:'/discount',
       component:()=>import('@/views/discountCoupon')
+    },
+    {
+      path:'/colllect',
+      component:()=>import('@/views/collect')
+    },
+    {
+      path:'/groupShop/:id',
+      component:()=>import('@/views/groupShop')
+    },
+    {
+      path:'/goCutPrice',
+      component:()=>import('@/views/cutPrice')
+    },
+    {
+      path:'/register',
+      component:()=>import('@/views/register')
     },
     {
       path: '*',

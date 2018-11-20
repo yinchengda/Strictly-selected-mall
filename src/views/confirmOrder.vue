@@ -102,7 +102,6 @@
 </template>
 <script>
 import axios from 'axios';
-
 import qs from 'qs';
 import Head from '@/components/common/header';
 export default {
@@ -169,8 +168,9 @@ export default {
             })    
         },
         clearBr(key) { 
-            key = key.replace(/<\/?.+?>/g,""); 
+            key = key.replace(/<\/?.+?>/g,"");
             key = key.replace(/[\r\n]/g, ""); 
+            key = key.replace(/&*/,"");
             return key; 
         } 
 

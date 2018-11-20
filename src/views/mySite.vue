@@ -43,11 +43,9 @@ export default {
     },
     created(){
         let token = this.$store.state.token;
-        if(!token){
-            this.$router.push('/login')
-        }else{
-            this.getSiteData(token)
-        }
+        
+        this.getSiteData(token)
+        
     },
     methods:{
         removeSite(id){

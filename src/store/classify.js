@@ -1,6 +1,5 @@
 import axios from 'axios';
-import global from '../config/global';
-let{api} = global;
+
 
 export default function classifyData(){
     return {
@@ -21,7 +20,7 @@ export default function classifyData(){
         },
         actions:{
             getClassifyData({commit},callBack){
-                axios.get(api+'/shop/goods/category/all')
+                axios.get(global.globalData.api+'/shop/goods/category/all')
                 .then(res => {
                     let{data} = res.data;
                     commit("setClassifyList",data);

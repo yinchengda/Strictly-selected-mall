@@ -54,6 +54,9 @@ const store = new Vuex.Store({
             state.orderAllPrice = price;
         }
     },
+    actions:{
+        
+    },
     getters:{
         _orderNum:state => state.orderNum,
         _orderAllPrice:state => state.orderAllPrice

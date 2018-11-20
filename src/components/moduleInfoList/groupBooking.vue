@@ -2,7 +2,9 @@
     <div class="group-booking-list">
         <div class="group-shop-item" v-for="(item,i) in idata" :key="i" v-if="item.pingtuan">
             <div class="img-box">
-                <img :src="item.pic" alt=""/>
+                <router-link :to="'/groupShop/'+item.id">
+                    <img :src="item.pic" alt=""/>
+                </router-link>
             </div>
             <div class="group-shop-message">
                 <p class="shop-title">
@@ -23,7 +25,9 @@
                         2人团￥
                         <span class="price">{{item.pingtuanPrice}}</span>
                     </span>
-                    <span class="go-group">去拼团</span>
+                    <router-link  class="go-group" :to="'/groupShop/'+item.id">
+                        <span>去拼团</span>
+                    </router-link>
 
                 </div>
             </div>

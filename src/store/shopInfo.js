@@ -1,7 +1,6 @@
 import axios from 'axios';
 import router from '../router';
-import global from '../config/global';
-let{api} = global;
+
 
 
 export default function ShopInfo(){
@@ -25,7 +24,7 @@ export default function ShopInfo(){
             getShopInfo({commit},callBack){
                 let id = router.history.current.params.id;
                 
-                axios.post(api+'/shop/goods/detail',"id="+id)
+                axios.post(global.globalData.api+'/shop/goods/detail',"id="+id)
                 .then(res => {
                     let {data} = res.data;
                     commit("setShopData",data);

@@ -2,7 +2,9 @@
     background: #fff;
     >#common-header{
         border:none;
-        background: #ddd;
+        // background: #ddd;
+        background: url('../assets/img/3cb0678edd094740add6d0dbcacd4a16.jpg') no-repeat;
+        background-size: 100% 100%;
         height: rem(400)
     }
     #to-back{
@@ -70,7 +72,7 @@
         .discount-item{
             margin: rem(20) 0;
             border-radius: rem(10);
-            background: url('/static/bg_discount.png') no-repeat;
+            background: url('../assets/img/bg_discount.png') no-repeat;
             background-size: 100% 100%;
             .discount-message{
                 padding: rem(30) rem(20);

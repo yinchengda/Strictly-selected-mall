@@ -23,7 +23,8 @@
             </ol>
         </div>
         <div class="sigin-btn-box">
-            <button @click="sigi_inFn" class="checked-in">已签到</button>
+             <!-- class="checked-in" -->
+            <button @click="sigi_inFn" :class="btnTxt=='已签到'?'checked-in':''">{{btnTxt}}</button>
         </div>
         <div class="singin-go-other">
             <div class="singin-go-other-item shopping">
@@ -58,6 +59,9 @@
     </div>
 </template>
 <script>
+/*
+ * 目前的逻辑是肯定不正确的.(随意写的逻辑...)
+ */
 import axios from 'axios';
 import Head from "@/components/common/header";
 export default {
@@ -67,7 +71,8 @@ export default {
   data() {
     return {
       day: 0,
-      regulation: []
+      regulation: [],
+      btnTxt:'签到'
     };
   },
   mounted() {
@@ -96,11 +101,13 @@ export default {
       axios
         .post("https://api.it120.cc/small4/score/sign", "token=" + token)
         .then(res => {
-          console.log(res);
+        //   console.log(res);
           if(res.data.code==0){
-              alert('签到成功')
+              alert('签到成功');
+              this.btnTxt = '已签到';
           }else{
-              alert(res.data.msg)
+              alert(res.data.msg);
+              this.btnTxt=='已签到'?'':this.btnTxt = '已签到';
           }
         });
     }

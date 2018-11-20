@@ -1,7 +1,7 @@
 <template>
     <div class="index-head" id="index-header">
         <span name="不要问我为什么存在"></span>
-        <img class="index-head-img" id="index-header-img"  src="/static/timg4.gif" alt="" />
+        <img class="index-head-img" id="index-header-img"  src="../../assets/img/timg4.gif" alt="" />
         <span>
             
         </span>
@@ -21,7 +21,7 @@ export default {
     left: 0;
     right: 0;
     z-index: 12;
-    background: rgba(219,207,207,0.0);
+    background: rgba(255,255,255,0.0);
     display: flex;
     justify-content: space-between;
     height: 3em;

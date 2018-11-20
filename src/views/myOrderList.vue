@@ -38,6 +38,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import Head from '@/components/common/header';
 export default{
     data(){

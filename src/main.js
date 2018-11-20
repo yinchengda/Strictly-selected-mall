@@ -4,11 +4,13 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import axios from 'axios';
-import global from './config/global';
 import store from './store/store.js';
 import VueLazyload from 'vue-lazyload';//图片懒加载
 import 'swiper/dist/css/swiper.min.css';
-import Navigation from 'vue-navigation'//路由动画
+import Navigation from 'vue-navigation';
+import './config/index';
+// console.log(global.globalData)
+//路由动画
 // 图片懒加载配置
 Vue.use(VueLazyload, {
   preLoad: 1.3, // 预加载高度比例
@@ -30,7 +32,6 @@ Vue.config.productionTip = false;
 new Vue({
   el: '#app',
   router,
-  global,
   store,
   components: { App },
   template: '<App/>'

@@ -14,7 +14,7 @@
     </div>  
     <div class="shop-evaluate abc">
         <div class="img-box">
-            <img src="/static/timg4.gif" alt="" />
+            <img src="../../assets/img/timg4.gif" alt="" />
         </div>
         <div class="text-box">
             <p class="username">
@@ -30,7 +30,7 @@
     </div>
     <!-- 13500000000  -->
     <div class="shop-info-transpond">
-        <img src="/static/1_03.png" alt=""/>
+        <img src="../../assets/img/1_03.png" />
     </div>
 </div>
 

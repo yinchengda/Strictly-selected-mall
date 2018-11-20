@@ -1,8 +1,11 @@
 <template>
     <div id="classify">
-        <Top />     
-        <List />
-        <Content />
+        <Top />
+        <div class="classify-container">
+            <List />
+            <Content />
+        </div>  
+        
     </div>
 </template>
 <script>

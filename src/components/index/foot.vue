@@ -19,15 +19,27 @@
                 <span>购物车</span>
                 </router-link>
             </li>
-            <li>
+            <li @click="userFn">
                 <router-link to="/index/user">
-                <i class="iconfont icon-icon-user"></i>
-                <span>我的</span>
+                    <i class="iconfont icon-icon-user"></i>
+                    <span>我的</span>
                 </router-link>
             </li>
         </ul>
     </footer>    
 </template>
 <script>
-    
+export default {
+    methods:{
+        userFn(){
+            let token = this.$store.state.token;
+            if(token == ""){
+                let login = confirm('登陆后才能查看个人信息哦,\n您要去登陆吗？');
+                if(login){
+                    this.$router.push('/login');
+                }
+            }
+        }
+    }
+}
 </script>

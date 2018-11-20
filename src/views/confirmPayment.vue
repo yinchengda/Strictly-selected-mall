@@ -56,7 +56,7 @@ export default {
       return this.$store.getters._orderAllPrice;
     }
   },
-  mounted() {
+  created() {
     let token = this.$store.state.token;
     axios
       .post(
@@ -65,7 +65,7 @@ export default {
       )
       .then(res => {
         let siteNullDefault = true;
-        // console.log(res.data.data)
+        console.log(res)
         res.data.data.forEach(ele => {
           // console.log(ele)
           if (ele.isDefault) {
@@ -80,8 +80,17 @@ export default {
   },
   methods: {
     ok() {
-      alert("付款成功！");
-      this.$router.push("/myOrderList/0");
+      //跳转至支付
+      window.location.href = 
+      'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe93d3f996beab1eb&redirect_uri=http://www.wyunfei.com/&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect'
+
+      // 支付完成后  跳转至订单
+      // this.$router.push("/myOrderList/0");
+      /* not Timer
+       * 抛物线/两个参数，起始点,结束点 通过transition/js来实现动画效果,css定位，获取元素的x,y轴，结束点的x,y轴，计算抛物线；线条弧度，实现动画;
+       * 
+       */
+
     }
   }
 };

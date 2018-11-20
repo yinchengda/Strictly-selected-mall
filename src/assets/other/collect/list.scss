@@ -1,0 +1,48 @@
+#collect-views{
+    background: #fff;
+    #common-header{
+        border: none;
+    }
+}
+.collect-list{
+    padding: 0 rem(20);
+    .collect-item{
+        display: flex;
+        padding: rem(20) 0;
+        border-bottom: rem(2) solid #f4f4f4;
+        .img-box{
+            flex: 0 0 24%;
+            width: rem(180);
+            height: rem(168);
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .collect-text{
+            flex: 0 0 51%;
+            margin-left: rem(20);
+            .collect-item-title{
+                color: #000;
+                margin-top: rem(18);
+                font-size: rem(28);
+            }
+            .collect-item-describe{
+                margin-top: rem(10);
+                color: #989898;
+            }
+        }
+        .collect-item-right{
+            .sub-content{
+                display: inline-block;
+                border:1px solid #9e9e9e;
+                color: #9e9e9e;
+                border-radius: rem(5);
+                padding: rem(8);
+                margin-top: rem(125);
+                margin-left: rem(40);
+                
+            }
+        }
+    }
+}

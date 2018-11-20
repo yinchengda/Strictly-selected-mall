@@ -1,0 +1,80 @@
+#register{
+    background: #F5F5F5;
+    input{
+        border: none;
+        outline: none;
+        background: #F5F5F5;
+        font-size: rem(30);
+    }
+    .register-from{
+        margin-top: rem(30);
+        padding: 0 rem(50);
+        .inp-box{
+            margin-bottom: rem(30);
+            padding: rem(20) rem(5);
+            display: flex;
+            align-items: center;
+            border-bottom: rem(2) solid #D6D6D6;
+            .num{
+                width: 100%;
+            }
+            .graphic-code{
+                width: 66%;
+            }
+            .graphic-box{
+                width:rem(188);
+                height: rem(68);
+                .graphic{
+                    width: 100%;
+                    height: 100%;
+                    border: rem(1) solid #B9B9B9;
+                }
+            }
+            .verification-code{
+                width: 66%;
+            }
+            .get-verification-code{
+                width: rem(188);
+                height: rem(68);
+                border-radius: rem(50);
+                color: #fff;
+                font-size: rem(30);
+                background: #FBB6B3;
+            }
+            .active{
+                background:linear-gradient(to left,#fa0242,#f51828);
+            }
+        }
+        .prompt{
+            color: #F30500;
+            font-size: rem(30);
+            margin-bottom: rem(20);
+        }
+        .protocol{
+            color: #9d9ba4;
+            font-size:rem(28);
+            >a{
+                color: #94b5d3
+            }
+        }
+        .register-btn{
+            text-align: center;
+            background: #FBB6B3;
+            color: #fff;
+            width: rem(422);
+            height: rem(92);
+            border-radius: rem(50);
+            font-size: rem(40);
+            letter-spacing: rem(10);
+            margin-top: rem(30);
+            margin-left: rem(100);
+        }
+        .active{
+            background: #F30500;
+        }
+        >.sub{
+            text-align: right;
+            margin: rem(20) 0;
+        }
+    }
+}

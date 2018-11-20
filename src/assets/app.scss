@@ -69,6 +69,19 @@
 
 @import './other/discountCoupon/index.scss';
 
+//收藏
+@import './other/collect/list.scss';
+@import './other/collect/null.scss';
+
+//groupShopInfo
+@import './other/groupShopInfo/foot.scss';
+@import './other/groupShopInfo/message.scss';
+
+//cutPrice
+@import './other/cutPrice/index.scss';
+
+@import './other/register/index.scss';
+
 *{
 moz-user-select: -moz-none;
 -moz-user-select: none;

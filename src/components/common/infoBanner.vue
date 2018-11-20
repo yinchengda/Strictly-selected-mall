@@ -8,7 +8,7 @@
         <div class="swiper-container info-banner">
             <div class="swiper-wrapper">
                 <div class="swiper-slide" v-for="(item,i) in data.pics" :key="i">
-                    <img v-lazy="item.pic" alt="" />
+                    <img :src="item.pic" alt="" />
                 </div>
                 
                 <!-- 模板 -->
@@ -30,7 +30,7 @@ export default {
         // },1000);
          //如何给它传参的时候实现回调...
         this.$store.dispatch("getShopInfo",data => {
-            // console.log(data)
+            console.log(data)
             setTimeout(()=>{
                 this.setSwiper();
             })
@@ -48,6 +48,7 @@ export default {
             speed:2000,
             loop:false,
             autoplay:{
+                disableOnInteraction:false,
                 delay:3000
             },
             pagination:{

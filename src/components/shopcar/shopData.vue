@@ -24,6 +24,32 @@
                 </div>
             </div>
         </div>
+
+        <!-- 模板 -->
+        <!-- <div class="shop-item">
+            <div class="checked-box">
+                <input type="checkbox" @click="checkedFn" />
+            </div>
+            <div class="shop-message">
+                <div class="img-box">
+                    <img src="../../assets/img/recommend-item4.png" />
+                </div>
+                <div class="shop-text">
+                    <p class="shop-title">网易制造智能感应垃圾桶</p>
+                    <p class="shop-type">选择规格:银灰色</p>
+                    <div class="shop-price-action">
+                        <span class="price">
+                            ￥200
+                        </span>
+                        <div class="action-box">
+                            <button class="shop-minus" @click="minusCount">-</button>
+                            <span class="shop-count">1</span>
+                            <span class="add" @click="addCount">+</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
     </div>
 </template>
 <script>

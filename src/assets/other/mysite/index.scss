@@ -13,13 +13,13 @@
                     -webkit-appearance:none;
                     width: rem(45);
                     height: rem(45);
-                    background: url('/static/圈圈.png') no-repeat;
+                    background: url('../assets/img/圈圈.png') no-repeat;
                     background-size:100% 100%;
                 }
                 input:checked{
                     background: url();
                     background-color: #b8282e;
-                    background-image: url('/static/对号.png');
+                    background-image: url('../assets/img/对号.png');
                     background-size: 110%;
                     background-position:rem(46) 0;//不好使 -.-
                     // content: "\2714";//不是对号吗 -.-

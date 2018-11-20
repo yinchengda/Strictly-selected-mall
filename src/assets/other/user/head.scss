@@ -1,10 +1,24 @@
 .user-head{
     height: rem(300);
     padding: rem(60) rem(30) rem(20) rem(30);
-    background: url('/static/user_bg.png') no-repeat;
+    background: url('../assets/img/user_bg.png') no-repeat;
     background-size: 100%;
+    // background-color: #D5C2A2;
     position: relative;
-    
+    .bolck-index{
+        position: absolute;
+        z-index: 6;
+    }
+    #user-head-bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        display: none;
+    }
     .user-message{
         display: flex;
         .user-message-img{
@@ -36,13 +50,14 @@
         }
     }
     #user-prompt{
-        position: fixed;
+        position: absolute;
         width: rem(500);
         height: rem(100);
         top: rem(80);
         left: rem(220);
-        background: url('/static/prompt.png') no-repeat;
+        background: url('../assets/img/prompt.png') no-repeat;
         background-size: 100% 100%;
+        z-index:6;
         // background-color: #fff;
         >p{
             margin-top: rem(25);

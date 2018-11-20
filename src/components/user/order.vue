@@ -2,11 +2,12 @@
     <div class="user-order">
         <div class="order-title">
            <div class="title-main">
-                        <i class="iconfont icon-dingdan"></i> 我的订单
+                        <i class="iconfont icon-dingdan"></i> 
+                        <span class="title-sub"> 我的订单 </span>
            </div>
            <div class="title-sub-icon">
                <router-link to="/myOrderList/0">
-                   <i class="iconfont icon-jiantouyoubian"></i>
+                   <i class="iconfont icon-youbianjiantoujiaoduxiao"></i>
                 </router-link>
            </div>
         </div>

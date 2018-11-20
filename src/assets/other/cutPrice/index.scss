@@ -1,0 +1,265 @@
+#cutPrice{
+    >#common-header{
+        background: linear-gradient(to bottom left,#B0A17A,#E3DAC7);
+        background: -webkit-linear-gradient(#B0A17A,#E3DAC7);
+        background: -moz-linear-gradient(#B0A17A,#E3DAC7);
+        background: -o-linear-gradient(#B0A17A,#E3DAC7);
+        background: -ms-linear-gradient(#B0A17A,#E3DAC7);
+        border-bottom: none;
+        padding: rem(20);
+        height: rem(850);
+        text-align: center;
+        position: relative;
+        >#to-back{
+            position: fixed;
+            top: rem(22);
+            left: rem(15);
+            width: rem(50);
+            height: rem(50);
+            padding: rem(4);
+            z-index: 20;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            .iconfont{
+                text-align: center;
+                color: #333;
+                display: block;
+                font-size: rem(28);
+                width: rem(50);
+                height: rem(50);
+                line-height: rem(50);
+                border-radius: 50%;
+                background: #fff;
+            }
+        }
+
+        #cut-price-main{
+            width: 100%;
+            .cut-price-user{
+                display: block;
+                width:85%;
+                padding-top: rem(110);
+                padding-left:10%;
+                color: #fff;
+                font-size: rem(30);
+                margin-bottom: rem(30);
+                >.user-img-box{
+                    display: inline-block;
+                    width: rem(115);
+                    height: rem(115);
+                    border-radius: 50%;
+                    border: rem(2) solid #baaa89;
+                    overflow: hidden;
+                    box-shadow:  rem(2) rem(2) rem(2) #bdad89;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .user-name{
+                    margin: rem(10) 0;
+                }
+                .sub-describe{
+                    margin: rem(20) 0;
+                    font-size:rem(26);
+                    letter-spacing: rem(2);
+                }
+            }
+            .cut-shop-message{
+                background: #F4EEDE;
+                // background:linear-gradient(#F5EBD8,#F8ECDF);
+                padding: rem(10);
+                padding-bottom: rem(15);
+                width: 88%;
+                border-radius: rem(5);
+                margin: 0 auto;
+                display: flex;
+                >.img-box{
+                    width: rem(170);
+                    height: rem(170);
+                    border-radius: rem(6);
+                    overflow: hidden;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                >.text{
+                    margin-left:rem(20);
+                    >.title{
+                        margin-top: rem(20);
+                        color:#000;
+                        font-size: rem(30);
+                    }
+                    >.txt{
+                       margin-top: rem(50);
+                       display: flex;
+                       justify-content: space-between; 
+                        span{
+                            font-size: rem(26);
+                        }
+                        >.min-price{
+                            color: #B2A389;
+                            .price{
+                                font-stretch:condensed;
+                                color: #9C936D;
+                                font-size: rem(28);
+                            }
+                        }
+                        >.old-price{
+                            color: #A0968C;
+                            text-decoration: line-through;
+                        }
+                    }
+                }
+            }
+
+            .cut-price-plan{
+                >.plan-main{
+                    letter-spacing: rem(2);
+                    margin: rem(38) 0;
+                    color: #E8E7D6;
+                    font-size: rem(24);
+                    font-weight: normal;
+                    .big-font{
+                        font-stretch:condensed;
+                        letter-spacing: rem(0);
+                        font-size: rem(30);
+                        color: #fff;
+                    }
+                }
+                >.btn-box{
+                    font-size: rem(28);
+                    button{
+                        border-radius: rem(5);
+                    }
+                    .at-present-price{
+    
+                    }
+                    .me-cut{
+                        background:#B0A176;
+                        color:#fff;
+                        border-radius: rme(5);
+                        padding: rem(20) rem(70);
+                        margin-right: rem(10);
+                    }
+                    .invite-friends-cut{
+                        background: none;
+                        border: 1px solid #A89876;
+                        padding: rem(20);
+                        color: #A1956F;
+                    }
+                }
+            }
+            
+            .cut-time-remaining{
+                margin-top: rem(50);
+                color: #fff;
+                font-size: rem(28);
+                >span{
+                    padding: rem(5) rem(6);
+                    background: #AFA179;
+                }
+            }
+            
+        }
+        >.triangle{
+            position: absolute;
+            bottom: -.4rem;
+            left: 46.5%;
+            width: rem(50);
+            height:rem(50);
+            color: #fff;
+            >.icon-xiaosanjiao{
+                font-size: rem(30);
+            }
+        }
+   
+    }
+    .help-num{
+        padding: rem(20) 0;
+        color: #9B9D91;
+        font-size: rem(26);
+        text-align: center;
+        letter-spacing: rem(2);
+    }
+    
+
+    .help-cut-price-list{
+        .item{
+            display: flex;
+            align-items: center;
+            padding: rem(20);
+            border-bottom: rem(3) dashed #efefef;
+            .img-box{
+                width: rem(110);
+                height: rem(110);
+                border-radius: rem(5);
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .item-message{
+                margin-left: rem(20);
+                .username{
+                    color: #121212;
+                    font-size: rem(30)
+                }
+                .cut-price-item{
+                    margin-top: rem(18);
+                    font-size: rem(24);
+                    color: #8b8b8b;
+                }
+            }
+            .cut-message{
+                margin-left: rem(128);
+               .cut-icon{
+                    transform: rotate(-20deg);
+                    width: rem(46);
+                    height: rem(40);
+                    vertical-align: middle;
+               }
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    // #_盖住{
+    //     position: fixed;
+    //     width: rem(80);
+    //     height: rem(50);
+    //     background: #CFBB9E;
+    //     top: 0;
+    //     left: rem(10);
+    //     z-index: 2;
+    // }
+    // #_懒{
+    //     width: 100%;
+    //     position: fixed;
+    //     top: 0;
+    //     left: 0;
+    //     right: 0;
+    //     bottom: 0;
+    //     z-index: 1
+    // }
+    // #gg{
+    //     position: fixed;
+    //     top: 30%;
+    //     left: 20%;
+    // }
+}

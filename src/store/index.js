@@ -1,6 +1,6 @@
 import axios from 'axios';
-import global from '../config/global';
-let{api} = global;
+// import global from '../config/global';
+// let{global.globalData.api} = global;
 
 export default function indexData() {
     return {
@@ -15,7 +15,7 @@ export default function indexData() {
         },
         actions:{
             getBanner({commit},callBack){
-                axios.get(api+'/banner/list')   
+                axios.get(global.globalData.api+'/banner/list')   
                 .then(res => {
                     let{data} = res.data;
                     // console.log(callBack)
@@ -34,14 +34,14 @@ export default function indexData() {
              * 像这样，将他保存在中央仓库：
              */
             getShopDataList({commit}){
-                axios.get(api+'/shop/goods/list')
+                axios.get(global.globalData.api+'/shop/goods/list')
                 .then(res => {
                     let {data} = res.data;
                     commit("setShopDataList",data)
                 })
             },
             getTopicList({commit},callBack){
-                axios.get(api+'/cms/news/list')
+                axios.get(global.globalData.api+'/cms/news/list')
                 .then(res => {
                     let{data} = res.data;
                     callBack(data)

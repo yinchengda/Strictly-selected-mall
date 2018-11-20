@@ -1,7 +1,7 @@
 <template>
     <div class="user-head">
-        <!-- <img src="../../assets/img/user_bg.png" alt=""> -->
-        <div class="user-message">
+        <img src="../../assets/img/user_bg.png" id="user-head-bg"/>
+        <div class="user-message bolck-index">
             <div class="user-message-img">
                 <a @click="toLogin" id="login_user">
                     <img src="../../assets/img/food.gif" alt="">

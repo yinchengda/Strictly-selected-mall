@@ -67,12 +67,12 @@ export default {
       this.$router.push("/confirmOrder"); //跳转值订单
 
       let data = this.$store.state.orderList;
-      console.log(this.clearBr(JSON.stringify(data)));
+      // console.log(this.clearBr(JSON.stringify(data)));
 
       //订单总额
       axios
         .post(
-          "https://api.it120.cc/small4/order/create/",
+          global.globalData.api+"/order/create/",
           "token=" +
             token +
             "&goodsJsonStr=" +

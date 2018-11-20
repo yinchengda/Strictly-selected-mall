@@ -4,7 +4,7 @@
 
     .order-title{
         padding: rem(20);
-        font-size: rem(40);
+        font-size: rem(30);
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -13,12 +13,12 @@
                 display: inline-block;
                 margin-bottom: -rem(20);
                 color: #d3bf80;
-                font-size: rem(50)
+                font-size: rem(40)
             }
         }
         .title-sub-icon{
             .iconfont{
-                font-size: rem(45);
+                font-size: rem(30);
             }
         }
     }
@@ -27,13 +27,16 @@
         ul{
             color: #545454;
             text-align: center;
-            font-size: rem(35);
+            font-size: rem(30);
             display: flex;
             justify-content: space-around;
             line-height: rem(60);
             li{
-                .iconfont{
-                    font-size: rem(70);
+                .icon-walllet,.icon-daipingjia{
+                    font-size: rem(50);
+                }
+                .icon-daishouhuo,.icon-daifahuo{
+                    font-size: rem(60);
                 }
             }
         }

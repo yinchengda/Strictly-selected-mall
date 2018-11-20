@@ -21,8 +21,10 @@
         </div>
         <div class="tool-item tool-collect">
             <a href="javascript:">
-                <i class="iconfont icon-xingxingkongxin collect"></i>
-                <p class="txt">我的收藏</p>
+                <router-link to="/colllect">
+                    <i class="iconfont icon-xingxingkongxin collect"></i>
+                    <p class="txt">我的收藏</p>
+                </router-link>
             </a>
         </div>
         <div class="tool-item tool-site">
