@@ -17,6 +17,11 @@ export default {
         Notice,
         Order,
         Tool
+    },
+    created(){
+        if(this.$store.state.token == ""){
+            this.$router.push('/index')
+        }
     }
 }
 </script>

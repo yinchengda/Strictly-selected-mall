@@ -8,11 +8,11 @@
             人气推荐
             <i class="iconfont icon-jiantouyoubian"></i>
         </div>
-        <div class="recommend-main">
+        <div class="recommend-main ">
             <div class="recommend-item" v-for="(item,i) in data" :key="i" v-if="item.recommendStatusStr == '推荐'">
                 <div class="img-box">
                     <router-link :to="'/shopInfo/'+item.id">
-                    <img :src="item.pic" alt="">
+                        <img :src="item.pic" alt="">
                     </router-link>
                 </div>
                 <div class="item-text">

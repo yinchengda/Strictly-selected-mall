@@ -47,6 +47,7 @@ export default {
         loginFn(){
             axios.post('https://api.it120.cc/small4/user/m/login/','mobile='+this.userId+'&pwd='+this.userPas+'&deviceId=123321&deviceName=HEIWEI')
             .then(res => {
+                console.log(res)
                 alert('登陆成功!');
                 this.saveCookie("userToken",res.data.data.token,3)
                 this.$store.commit('setUserToken',res.data.data.token);//保存token

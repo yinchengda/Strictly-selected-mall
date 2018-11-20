@@ -4,79 +4,23 @@
         <div class="title">
             猜你喜欢
         </div>
-        <div class="recommend-main">
-            <div class="recommend-item">
+        <div class="recommend-main cai-like">
+            <div class="recommend-item" v-for="(item,i) in data" :key="i" v-if="i<4">
                 <div class="img-box">
-                    <img src="../../assets/img/recommend-item1.png" alt="">
+                    <router-link :to="'/shopInfo/'+item.id">
+                    <img :src="item.pic" alt="">
+                    </router-link>
                 </div>
                 <div class="item-text">
                     
                     <h3 class="item-topices">
-                        清欢素雅小程序模板（API工厂授权）
+                        {{item.name}}
                     </h3>
                     <p class="item-describe">
-                        全场模板使用优惠券立减88元
+                        {{item.characteristic}}
                     </p>
                     <p class="item-price">
-                        <span class="price">￥299</span>
-                        <span class="out-of-print">已售358</span> 
-                    </p>
-
-                </div>
-            </div>
-            <div class="recommend-item">
-                <div class="img-box">
-                    <img src="../../assets/img/recommend-item2.png" alt="">
-                </div>
-                <div class="item-text">
-                    
-                    <h3 class="item-topices">
-                        清欢素雅小程序模板（API工厂授权）
-                    </h3>
-                    <p class="item-describe">
-                        全场模板使用优惠券立减88元
-                    </p>
-                    <p class="item-price">
-                        <span class="price">￥299</span>
-                        <span class="out-of-print">已售268</span>
-                    </p>
-
-                </div>
-            </div>
-            <div class="recommend-item">
-                <div class="img-box">
-                    <img src="../../assets/img/recommend-item3.png" alt="">
-                </div>
-                <div class="item-text">
-                    
-                    <h3 class="item-topices">
-                        清欢素雅小程序模板（API工厂授权）
-                    </h3>
-                    <p class="item-describe">
-                        全场模板使用优惠券立减88元
-                    </p>
-                    <p class="item-price">
-                        <span class="price">￥299</span>
-                        <span class="out-of-print">已售358</span>
-                    </p>
-
-                </div>
-            </div>
-            <div class="recommend-item">
-                <div class="img-box">
-                    <img src="../../assets/img/recommend-item4.png" alt="">
-                </div>
-                <div class="item-text">
-                    
-                    <h3 class="item-topices">
-                        清欢素雅小程序模板（API工厂授权）
-                    </h3>
-                    <p class="item-describe">
-                        全场模板使用优惠券立减88元
-                    </p>
-                    <p class="item-price">
-                        <span class="price">￥299</span>
-                        <span class="out-of-print">已售267</span>
+                        ￥{{item.minPrice}} 
                     </p>
 
                 </div>
@@ -85,5 +29,11 @@
     </div>    
 </template>
 <script>
-    
+export default {
+    computed:{
+        data(){
+            return this.$store.getters.shopData;
+        }
+    }
+}
 </script>

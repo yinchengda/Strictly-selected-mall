@@ -6,7 +6,9 @@
             </div>
             <div class="shop-message">
                 <div class="img-box">
-                    <img :src="item.pic" />
+                    <router-link :to="'/shopInfo/'+item.goodsId">
+                        <img :src="item.pic" />
+                    </router-link>
                 </div>
                 <div class="shop-text">
                     <p class="shop-title">{{item.name}}</p>

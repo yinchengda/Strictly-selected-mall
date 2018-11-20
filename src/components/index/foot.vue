@@ -37,6 +37,8 @@ export default {
                 let login = confirm('登陆后才能查看个人信息哦,\n您要去登陆吗？');
                 if(login){
                     this.$router.push('/login');
+                }else{
+                    this.$router.push('/index');
                 }
             }
         }
