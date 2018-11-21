@@ -9,24 +9,27 @@
         </li>
     </ul>
     <div>
-    <div class="shop-introduce block abc" v-html="data.content">
-       商品信息
-    </div>  
-    <div class="shop-evaluate abc">
-        <div class="img-box">
-            <img src="../../assets/img/timg4.gif" alt="" />
+        <div class="shop-introduce block abc" v-html="data.content">
+        商品信息
+        </div>  
+        <div class="shop-evaluate abc">
+            <div class="item" v-if="!valuateShow">
+                <div class="img-box">
+                    <img src="../../assets/img/timg4.gif" alt="" />
+                </div>
+                <div class="text-box">
+                    <p class="username">
+                        丸子君
+                        <span class="good">好评</span> 
+                    </p>
+                    <p class="evaluate">
+                        系统默认好评
+                    </p>
+                    <p class="time">2018-6-26 20 : 20 : 00</p>
+                </div>
+            </div>
+            <p class="valuate-null">暂无评价，快来抢杀花吧！</p>
         </div>
-        <div class="text-box">
-            <p class="username">
-                丸子君
-                <span class="good">好评</span> 
-            </p>
-            <p class="evaluate">
-                系统默认好评
-            </p>
-            <p class="time">2018-6-26 20 : 20 : 00</p>
-        </div>
-    </div>
     </div>
     <!-- 13500000000  -->
     <div class="shop-info-transpond">
@@ -36,14 +39,33 @@
 
 </template>
 <script>
+import axios from 'axios';
 import toggleFn from '../../utils/info-toggle';
 export default {
+    data(){
+        return {
+            valuateShow:false
+        }
+    },
     mounted(){
-        toggleFn()
+        toggleFn();//选项卡
+        this.$store.dispatch('getShopEvaluate',res => {
+            if(res.data.code == 700){
+                this.valuateShow = true;
+            }else if(res.data.code == 0){
+
+            }else{
+                alert(res.data.msg);
+                console.log(res);
+            }
+                console.log(res);
+
+        })
     },
     computed:{
         data(){
-            return this.$store.getters.shopInfoData
+            return this.$store.getters.shopInfoData;
+            // return;
         }
     }
 }

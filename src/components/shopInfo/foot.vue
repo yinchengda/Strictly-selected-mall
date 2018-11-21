@@ -9,10 +9,10 @@
         <a>
             <i class="iconfont icon-xingxingkongxin"></i>
         </a>
-        <button class="purchase-now" @click="toggleShade(false)">
+        <button class="purchase-now" @click="toggleShade('立即购买')">
                 立即购买
         </button>
-        <button class="add-shopcar" @click="toggleShade(true)">
+        <button class="add-shopcar" @click="toggleShade('加入购物车')">
             加入购物车
         </button>
         <span class="shopcar-count">1</span>
@@ -34,7 +34,7 @@ export default {
         setShop(){
             this.$store.state
         },
-         toggleShade(sl){
+        toggleShade(sl){
             this.$store.commit('toggleLazyShow',sl);
         },
         showOK(){

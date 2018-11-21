@@ -149,14 +149,14 @@ export default {
             let data = this.$store.state.orderList;
             let token = this.$store.state.token;
             // console.log(token);
-            console.log(JSON.stringify(data));
+            // console.log(this.clearBr(JSON.stringify(data)));
             // console.log([this.shop])
             //创建订单
             axios.post('https://api.it120.cc/small4/order/create/',
             'token='+token+
             '&goodsJsonStr='+
-            `${this.clearBr(JSON.stringify(data))}`+
-            '&expireMinutes=80'
+            this.clearBr(JSON.stringify(data))+
+            '&expireMinutes=0'
             )
             .then(res => {
                 // console.log(res)
@@ -170,11 +170,9 @@ export default {
         clearBr(key) { 
             key = key.replace(/<\/?.+?>/g,"");
             key = key.replace(/[\r\n]/g, ""); 
-            key = key.replace(/&*/,"");
+            key = key.replace(/&*/g,"");
             return key; 
-        } 
-
-
+        }
     }
 }
 //To strive, to seek, to find, and not to yield.

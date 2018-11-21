@@ -96,6 +96,14 @@ const router = new Router({
       component:()=>import('@/views/register')
     },
     {
+      path:'/evaluate',
+      component:()=>import('@/views/commodityeValuate')
+    },
+    {
+      path:'/myCutShopList',
+      component:()=>import('@/views/myCutShopList')
+    },
+    {
       path: '*',
       redirect: (to) => {
         if (to.path === '/') {

@@ -80,15 +80,12 @@ export default {
   },
   methods: {
     ok() {
-      //跳转至支付
-      // window.location.href = 
-      // 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe93d3f996beab1eb&redirect_uri=http://www.wyunfei.com/&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect'
       window.location.href = 
-      'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe93d3f996beab1eb&redirect_uri=http://www.wyunfei.com/index1.html&response_type=code&scope=snsapi_userinfo&state='+this.orderAllPrice
+      'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe93d3f996beab1eb&redirect_uri=http://www.wyunfei.com/index.html&response_type=code&scope=snsapi_userinfo&state=STATUS'
       // 支付完成后  跳转至订单
       // this.$router.push("/myOrderList/0");
       /* not Timer
-       * 抛物线/两个参数，起始点,结束点 通过transition/js来实现动画效果,css定位，获取元素的x,y轴，结束点的x,y轴，计算抛物线；线条弧度，实现动画;
+       * 抛物线/两个参数，起始点,结束点 通过transition/js来实现动画效果,css定位，获取元素的x,y轴，结束点的x,y轴，计算抛物 线；线条弧度，实现动画;
        * 
        */
 

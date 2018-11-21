@@ -1,8 +1,6 @@
 import axios from 'axios';
 import router from '../router';
 
-
-
 export default function ShopInfo(){
     return {
         state:{
@@ -23,12 +21,19 @@ export default function ShopInfo(){
         actions:{
             getShopInfo({commit},callBack){
                 let id = router.history.current.params.id;
-                
                 axios.post(global.globalData.api+'/shop/goods/detail',"id="+id)
                 .then(res => {
                     let {data} = res.data;
                     commit("setShopData",data);
                     callBack(data)
+                })
+            },
+            getShopEvaluate({commit},callBack){
+                let id = router.history.current.params.id;
+                axios.post('https://api.it120.cc/small4/shop/goods/reputation',
+                'goodsId='+id
+                ).then(res => {
+                    callBack(res);
                 })
             }
         },

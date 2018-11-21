@@ -17,7 +17,7 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state:{
-        shopBtnTxt:'立即购买',
+        shopBtnTxt:'',
         lazyShow:false,
         userName:'',
         token:'',//e7a49293-9f0c-45ef-965b-ebf3750fc5a0
@@ -31,13 +31,8 @@ const store = new Vuex.Store({
             console.log(token)
         },
         toggleLazyShow(state,sl){
-            if(sl){
-                state.lazyShow = !state.lazyShow;
-                state.shopBtnTxt = '加入购物车'
-            }else{
-                state.lazyShow = !state.lazyShow
-                state.shopBtnTxt = '立即购买'
-            }
+            state.lazyShow = !state.lazyShow;
+            state.shopBtnTxt = sl
         },
         setOrderList(state,data){
             if(!data.length){

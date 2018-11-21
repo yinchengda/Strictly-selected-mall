@@ -30,7 +30,7 @@ export default {
         return{
             a:false,
             userId:'13500000000',
-            userPas:'',
+            userPas:'abcdefg',
             fromPath:''
         }
     },

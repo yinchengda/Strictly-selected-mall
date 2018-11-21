@@ -8,10 +8,10 @@
             </a>
         </div>
         <div class="tool-item tool-cutprice">
-            <a href="javascript:">
+            <router-link to="/myCutShopList">
                 <i class="iconfont icon-kanjia cutprice"></i>
                 <p class="txt">我的砍价</p>
-            </a>
+            </router-link>
         </div>
         <div class="tool-item tool-Coupons">
             <router-link to="/discount">

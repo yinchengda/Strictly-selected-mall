@@ -24,7 +24,7 @@ export default {
                     return;
                 }
             }
-            this.$router.push('/goCutPrice');
+             this.$store.commit('toggleLazyShow',"发起砍价");
         }
     }
 }

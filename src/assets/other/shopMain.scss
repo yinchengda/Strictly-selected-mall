@@ -36,39 +36,48 @@
         }
         
     }
+    
     .shop-evaluate{
-        padding: rem(30) rem(20);
-        display: flex;
-        .img-box{
-            width: rem(90);
-            height: rem(160);
-            img{
-               width: 100%;
-               height: 100%;
-            }
-        }
-        .text-box{
-            margin-left: rem(20);
-            .username{
-                color: #222222;
-                font-size: rem(35);
-                .good{
-                    margin-left: rem(30);
-                    padding: rem(3) rem(10);
-                    font-size: rem(22);
-                    border-radius: rem(8);
-                    background: #bc2635;
-                    color: #ffffff;
+        >.item{
+            padding: rem(30) rem(20);
+            display: flex;
+            .img-box{
+                width: rem(90);
+                height: rem(160);
+                img{
+                   width: 100%;
+                   height: 100%;
                 }
             }
-            .evaluate{
-                font-size: rem(33);
-                margin: rem(28) 0;
+            .text-box{
+                margin-left: rem(20);
+                .username{
+                    color: #222222;
+                    font-size: rem(35);
+                    .good{
+                        margin-left: rem(30);
+                        padding: rem(3) rem(10);
+                        font-size: rem(22);
+                        border-radius: rem(8);
+                        background: #bc2635;
+                        color: #ffffff;
+                    }
+                }
+                .evaluate{
+                    font-size: rem(33);
+                    margin: rem(28) 0;
+                }
+                .time{
+                    font-size: rem(26);
+                    color: #969696;
+                }
             }
-            .time{
-                font-size: rem(26);
-                color: #969696;
-            }
+        }
+        .valuate-null{
+            color: #ccc;
+            text-align: center;
+            font-size: rem(40);
+            padding: rem(80) 0;
         }
     }
     .active{

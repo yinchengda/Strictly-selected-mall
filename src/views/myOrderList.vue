@@ -6,7 +6,7 @@
             <span :class="orderType==1?'active':''" @click="filterOrder(1)">代发货</span>
             <span :class="orderType==2?'active':''" @click="filterOrder(2)">待收货</span>
             <span :class="orderType==3?'active':''" @click="filterOrder(3)">待评价</span>
-            <span :class="orderType==-1?'active':''" @click="filterOrder(-1)">已完成</span>
+            <span :class="orderType==4?'active':''" @click="filterOrder(4)">已完成</span>
         </nav>
         <div class="order-main">
             <div class="order-item" v-for="(item,i) in orderList" :key="i">
@@ -28,7 +28,7 @@
                     <span class="order-all-price">合计：￥{{item.amount}}</span>
                     <div class="btn-box" v-if="!(orderType==-1)">
                         <button class="clear-order" @click="orderClose(item.id)">取消订单</button>
-                        <button class="pay-now-order">立即支付</button>
+                        <button class="pay-now-order" @click="ok(item.amount)">立即支付</button>
                     </div>
                 </div>
             </div>
@@ -75,6 +75,10 @@ export default{
         }
     },
     methods:{
+        ok(price){
+            window.location.href = 
+      'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe93d3f996beab1eb&redirect_uri=http://www.wyunfei.com/index1.html&response_type=code&scope=snsapi_userinfo&state='+price
+        },
         filterOrder(status){
             this.orderType = status;
         },
