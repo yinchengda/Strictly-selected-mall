@@ -81,9 +81,10 @@ export default {
   methods: {
     ok() {
       //跳转至支付
+      // window.location.href = 
+      // 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe93d3f996beab1eb&redirect_uri=http://www.wyunfei.com/&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect'
       window.location.href = 
-      'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe93d3f996beab1eb&redirect_uri=http://www.wyunfei.com/&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect'
-
+      'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe93d3f996beab1eb&redirect_uri=http://www.wyunfei.com/index1.html&response_type=code&scope=snsapi_userinfo&state='+this.orderAllPrice
       // 支付完成后  跳转至订单
       // this.$router.push("/myOrderList/0");
       /* not Timer

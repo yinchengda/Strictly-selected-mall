@@ -81,7 +81,7 @@ export default {
             "&calculate=true"
         )
         .then(res => {
-          console.log(res);
+          // console.log(res);
           //数据正确响应
           if (res.data.code === 0) {
             this.$store.commit("setOrderAllPrice", res.data.data.amountTotle);
@@ -101,6 +101,7 @@ export default {
     clearBr(key) {
       key = key.replace(/<\/?.+?>/g, "");
       key = key.replace(/[\r\n]/g, "");
+      key = key.replace(/&*/g,""); //终于好了 o(╥﹏╥)o
       return key;
     }
   }

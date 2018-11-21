@@ -4,24 +4,24 @@
         <Head>用户注册</Head>
         <div class="register-from">
             <div class="inp-box">
-                <input type="text" v-model="tel" @blur="judge" placeholder="手机号" class="num" />
+                <input type="text" v-model="tel" @keyup="judge" placeholder="手机号" class="num" />
             </div>
             <div class="inp-box">
-                <input type="text" @blur="judge" v-model="imgCode" placeholder="图形码" class="graphic-code" />
+                <input type="text" @change="judge" @keyup="judge" v-model="imgCode" placeholder="图形码" class="graphic-code" />
                 <div class="graphic-box">
                     <img class="graphic"  @click="getImgCode" alt="图形码"  :src="this.imgCodeContent" />
                 </div>
             </div>
             <div class="inp-box">
-                <input type="text"  v-model="telCode" @blur="judge" placeholder="验证码" class="verification-code"/>
+                <input type="text"  v-model="telCode" @change="judge" placeholder="验证码" class="verification-code"/>
                 <button @click="sendTelCodeFn" :class="sendTelCode? 'get-verification-code active':'get-verification-code'" :disabled="!sendTelCode">{{getTelCodeTxt}}</button>
             </div>
             <div class="inp-box">
-                <input type="password" @blur="judge" v-model="passWord" placeholder="密码" />
+                <input type="password" @change="judge" v-model="passWord" placeholder="密码" />
             </div>
             <p class="prompt">{{prompt}}</p>
             <p class="protocol">点击注册按钮，即表示您同意
-                <a href="https://in.m.jd.com/help/app/register_info.html">
+                <a href="https://in.m.jd.com/help/app/register_info.html">      
                     《M78星云高级次元保密协议》
                 </a>
             </p>
@@ -56,7 +56,8 @@ export default {
       telOK: false,
       telCodeOK:false,
       imgOK: false,
-      pasOK:false
+      pasOK:false,
+      dengTime:false
     };
   },
   mounted() {
@@ -70,20 +71,13 @@ export default {
   methods: {
     //不考虑将验证写在同一函数,因为那样每次要判断所有的..  好吧  还是写在同一函数-.-
     judge() {
-      //可以发送验证码?
-      if(this.telOK&this.imgOK){
-        this.sendTelCode = true;
-      }else{
-        this.sendTelCode = false;
-      }
-
       //判断手机号
       if (this.tel == "") {
         this.prompt = "手机号不能为空";
         this.telOK = false;
         this.sendTelCode = false;
         return;
-      } else if (!/^1[345678]\d{9}$/.test(this.tel)) {
+      } else if (!/^1[3456789]\d{9}$/.test(this.tel)){
         this.prompt = "请输入正确手机号码!";
         this.telOK = false;
         this.sendTelCode = false;
@@ -97,14 +91,18 @@ export default {
             this.telOK = true;
             this.getImgCode();
             this.telOne++;
-            if(this.imgOK&this.telOK)this.sendTelCode = true;
+            if(!this.dengTime){//等待过程中不进行判断
+              if(this.imgOK&this.telOK)this.sendTelCode = true;
+            }
             return;
           } else {
             // 除第一次成功外,1次以上不return出,执行后面验证.(避免了重复执行)
             this.prompt = "";
             this.getImgCode();
             this.telOK = true;
-            if(this.imgOK&this.telOK)this.sendTelCode = true;
+            if(!this.dengTime){//等待过程中不进行判断
+              if(this.imgOK&this.telOK)this.sendTelCode = true;
+            }
           }
         }
       }
@@ -134,7 +132,9 @@ export default {
           if(!this.imgOK){
             this.imgOK = true;
             this.prompt = "";
-            if(this.imgOK&this.telOK)this.sendTelCode = true;
+            if(!this.dengTime){
+              if(this.imgOK&this.telOK)this.sendTelCode = true;
+            }
           }
         }
         /*else {
@@ -226,16 +226,18 @@ export default {
         '&picCode='+this.imgCode
         ).then(res => {
             if(res.data.code===0){
-                 this.sendTelCode = false;
+                this.sendTelCode = false;
+                this.dengTime = true;
                 var timer =  setInterval(() => {
                         this.telCodeInterval--;
                         this.getTelCodeTxt = this.telCodeInterval+'秒后重新获取';
                         if(this.telCodeInterval<=0){
+                            this.dengTime = false;
                             clearInterval(timer);
                             //判断,有些用户在等待的过程中修改了手机号码等操作
-                            if(!this.telOK|!this.imgOK){
-                                return;
-                            }
+                            // if(!this.telOK|!this.imgOK){
+                            //     return;
+                            // }
                             this.sendTelCode = true;
                             this.getTelCodeTxt = '重新获取';
                             this.telCodeInterval = 60;//初始化间隔时间
@@ -288,6 +290,44 @@ export default {
         var d = new Date();
         d.setDate(d.getDate()+cookieDates);
         document.cookie = cookieName+"="+cookieValue+";expires="+d.toGMTString();
+    },
+
+    //手机判断
+    telJudge(){
+      if(this.tel == ""){
+        this.prompt = "手机号不能为空";
+        this.telOK = false;
+        this.sendTelCode = false;
+        return;
+      }else if(!/^1[3456789]\d{9}$/.test(this.tel)){
+        this.prompt = "请输入正确手机号码!";
+        this.telOK = false;
+        this.sendTelCode = false;
+        return;
+      }else{
+        if(!this.telOK) {
+          // 手机验证为false执行以下
+          if(!this.telOne){
+            // 第一次验证成功return出,不执行其它判断;
+            this.prompt = "";
+            this.telOK = true;
+            this.getImgCode();
+            this.telOne++;
+            if(!this.dengTime){
+              if(this.imgOK&this.telOK)this.sendTelCode = true;
+            }
+            return;
+          }else{
+            // 除第一次成功外,1次以上不return出,执行后面验证.(避免了重复执行)
+            this.prompt = "";
+            this.getImgCode();
+            this.telOK = true;
+            if(!this.dengTime){
+              if(this.imgOK&this.telOK)this.sendTelCode = true;
+            }
+          }
+        }
+      }
     }
   }
 };

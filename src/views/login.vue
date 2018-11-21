@@ -48,11 +48,15 @@ export default {
             axios.post('https://api.it120.cc/small4/user/m/login/','mobile='+this.userId+'&pwd='+this.userPas+'&deviceId=123321&deviceName=HEIWEI')
             .then(res => {
                 console.log(res)
-                alert('登陆成功!');
-                this.saveCookie("userToken",res.data.data.token,3)
-                this.$store.commit('setUserToken',res.data.data.token);//保存token
-                // this.$router.push(this.fromPath)
-                this.$router.push('/index/user')
+                if(res.data.code === 0){
+                    alert('登陆成功!');
+                    this.saveCookie("userToken",res.data.data.token,3)
+                    this.$store.commit('setUserToken',res.data.data.token);//保存token
+                    // this.$router.push(this.fromPath)
+                    this.$router.push('/index/user')
+                }else{
+                    alert(res.data.msg)
+                }
             })
         },
         //保存cookie

@@ -273,35 +273,4 @@ export default {
     }
   }
 };
-
-let arr = [
-  {
-    goodsId: 99762,
-    number: 1,
-    propertyChildIds: "5351:17890",
-    logisticsType: 0,
-    name: "男式羊羔绒休闲外套",
-    describe: "仿羊绒内里，却有真实安全感",
-    price: 429,
-    checked: true,
-    pic:
-      "https://cdn.it120.cc/apifactory/2018/11/06/1b3e710f5badcb6b9f7a6f5f2f77b091.jpg",
-    typeTxt: "选择牛仔尺码y颜色:30(170/74A)"
-  }
-];
-let bug = [
-  {
-    goodsId: 99756,
-    number: 1,
-    propertyChildIds: "8781:35181",
-    logisticsType: 0,
-    name: "挚&middot;染色提花四件套",
-    describe: "新疆长绒棉+奢密缎纹，立体提花轻奢现代",
-    price: 999,
-    checked: true,
-    pic:
-      "https://cdn.it120.cc/apifactory/2018/11/06/51362e1eecedacd0544e722529dfc32e.jpg",
-    typeTxt: "选择雅致格纹:1.8m(6英尺)床"
-  }
-];
 </script>
