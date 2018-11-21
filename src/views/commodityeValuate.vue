@@ -28,17 +28,43 @@
 
             </textarea>
         </div>
-        <button class="submit-evaluate">提交评价</button>
-
+        <button class="submit-evaluate" @click="submitFn">提交评价</button>
 
     </div>
 </template>
 
 <script>
+import axios from 'axios';
 import Head from '@/components/common/header';
 export default {
     components:{
         Head
+    },
+    methods:{
+        submitFn(){
+            let data = {
+                    token:"登录接口获取的登录凭证",
+                    orderId:"数字订单号，订单接口的id，不是 orderNumber",
+                    reputations:[
+                        {
+                        id:"订单归属的商品列表数据的id字段",
+                        reputation:"0 差评 1 中评 2 好评",
+                        remark:"评价备注，限200字符"
+                        },
+                        {
+                        id:"订单归属的商品列表数据的id字段",
+                        reputation:"0 差评 1 中评 2 好评",
+                        remark:"评价备注，限200字符"
+                        }
+                    ]
+                    }
+
+            axios.post('https://api.it120.cc/small4/order/reputation',
+            'postJsonString=' + data
+            ).then(res => {
+
+            })
+        }
     }
 }
 </script>

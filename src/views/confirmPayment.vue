@@ -12,7 +12,7 @@
                         <span class="price">￥{{orderAllPrice}}</span>
                     </p>
                     <p class="order-num">
-                        订单号：{{orderNum}}
+                        订单号：{{orderNum.orderNumber}}
                     </p>
                 </div>
             </div>
@@ -80,8 +80,14 @@ export default {
   },
   methods: {
     ok() {
+     let obj = {
+       price:this.orderAllPrice,
+       id:this.orderNum.id
+      }
+      console.log(`${JSON.stringify(obj)}`)
       window.location.href = 
-      'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe93d3f996beab1eb&redirect_uri=http://www.wyunfei.com/index.html&response_type=code&scope=snsapi_userinfo&state=STATUS'
+      `https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe93d3f996beab1eb&redirect_uri=http://www.wyunfei.com/&response_type=code&scope=snsapi_userinfo&state=${JSON.stringify(obj)}`
+      
       // 支付完成后  跳转至订单
       // this.$router.push("/myOrderList/0");
       /* not Timer

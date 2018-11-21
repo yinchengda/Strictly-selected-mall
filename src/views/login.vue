@@ -29,8 +29,8 @@ export default {
     data(){
         return{
             a:false,
-            userId:'13500000000',
-            userPas:'abcdefg',
+            userId:'16601119346',
+            userPas:'666666A',
             fromPath:''
         }
     },

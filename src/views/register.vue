@@ -25,7 +25,7 @@
                     《M78星云高级次元保密协议》
                 </a>
             </p>
-            <button :class="telOK&imgOK&telCodeOK&pasOK? 'register-btn active':'register-btn'" @click="register"  :disabled="(!telOK|!imgOK|!telCodeOK|!pasOK)==1?true:false">注册</button>
+            <button :class="telOK&imgOK&telCodeOK&pasOK? 'register-btn active':'register-btn'" @click="register"  :disabled="telOK&imgOK&telCodeOK&pasOK?false:true">注册</button>
             <p class="sub"><router-link to="/login">已有账号？</router-link></p>
         </div>
         
@@ -266,6 +266,8 @@ export default {
             }
             if(res.data.msg === 10000){
               alert('该手机号已注册,请直接登陆！');
+            }else {
+              alert(res.data.msg)
             }
         })
     },

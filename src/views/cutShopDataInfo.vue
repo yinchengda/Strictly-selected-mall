@@ -13,7 +13,6 @@ export default {
         CutShopInfo
     },
     mounted(){
-       
     }
 }
 </script>

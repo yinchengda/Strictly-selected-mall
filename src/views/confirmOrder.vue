@@ -161,7 +161,8 @@ export default {
             .then(res => {
                 // console.log(res)
                 if(res.data.code === 0){
-                    this.$store.commit('setOrderNum',res.data.data.orderNumber)
+                    // console.log(res)
+                    this.$store.commit('setOrderNum',res.data.data)
                 }else{
                     console.error('创建订单失败，\n'+res.data.msg)
                 }
