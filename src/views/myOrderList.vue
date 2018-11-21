@@ -21,14 +21,16 @@
                 <div class="order-number">
                     订单号：{{item.orderNumber}}
                 </div>
-                <div class="item-order-message">
-                    <img src="../assets/img/recommend-item1.png" alt=""/>
+                <div class="item-order-message-imgbox">
+                    <div class="item-order-message" v-for="(ele,j) in shopData[item.id]" :key="j">
+                        <img :src="ele.pic" @click="toEvaluate(item,j)" alt=""/>
+                    </div>
                 </div>
                 <div class="order-item-foot">
                     <span class="order-all-price">合计：￥{{item.amount}}</span>
                     <div class="btn-box" v-if="!(orderType==-1)">
                         <button class="clear-order" @click="orderClose(item.id)">取消订单</button>
-                        <button class="pay-now-order" @click="ok(item.amount)">立即支付</button>
+                        <button class="pay-now-order" @click="ok(item.amount,item.id)">立即支付</button>
                     </div>
                 </div>
             </div>
@@ -44,7 +46,8 @@ export default{
     data(){
         return {
             orderList:[],
-            orderType:0
+            orderType:0,
+            shopData:{}
         }
     },
     components:{
@@ -75,9 +78,18 @@ export default{
         }
     },
     methods:{
-        ok(price){
+        toEvaluate(data,i){
+            this.$store.commit("setEvaluateShopMessage",{"data":data,"i":i})
+            this.$router.push('/evaluate');
+        },
+        ok(price,id){
+            let obj = {
+                price:price,
+                id:id
+            }
+            // console.log(`${JSON.stringify(obj)}`)
             window.location.href = 
-      'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe93d3f996beab1eb&redirect_uri=http://www.wyunfei.com/index1.html&response_type=code&scope=snsapi_userinfo&state='+price
+            `https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe93d3f996beab1eb&redirect_uri=http://www.wyunfei.com/&response_type=code&scope=snsapi_userinfo&state=${JSON.stringify(obj)}`
         },
         filterOrder(status){
             this.orderType = status;
@@ -86,8 +98,11 @@ export default{
             axios.post('https://api.it120.cc/small4/order/list?',
             'token='+token
             ).then(res => {
+                // console.log(res)
                 let data = res.data.data.orderList;
                 let arr = [];
+                this.$store.commit("saveShopAll",res.data.data.goodsMap)
+                this.shopData = res.data.data.goodsMap;
                 data.forEach(ele => {
                    if(ele.status == this.orderType){
                        arr.push(ele)

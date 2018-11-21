@@ -43,15 +43,19 @@
                 padding:rem(15) rem(20);
                 border-bottom: rem(3) solid #F7F7F7;
             }
-            .item-order-message{
+            .item-order-message-imgbox{
                 border-bottom: rem(3) solid #F7F7F7;
                 padding:rem(15) rem(20);
                 padding-bottom: rem(50);
-                width: rem(130);
-                height: rem(126);
-                img{
-                    width: 100%;
-                    height: 100%;
+                display: flex;
+                .item-order-message{
+                    width: rem(130);
+                    height: rem(126);
+                    margin: 0 rem(10);
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
             }
             .order-item-foot{

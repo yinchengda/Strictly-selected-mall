@@ -24,7 +24,7 @@
         </div> -->
 
         <div class="evaluate-inp-box">
-            <textarea cols="24" rows="3" placeholder="亲，您对这个商品满意吗？您的评价会帮助我们选择更好的商品哦！">
+            <textarea cols="24" rows="3" v-model="evaluateTxt" placeholder="亲，您对这个商品满意吗？您的评价会帮助我们选择更好的商品哦！">
 
             </textarea>
         </div>
@@ -40,29 +40,45 @@ export default {
     components:{
         Head
     },
+    data(){
+        return{
+            evaluateTxt:''
+        }
+    },
+    mounted(){
+        // console.log(this.$store.state.evaluateShopData.evaluateData);
+        // console.log(this.$store.state.evaluateShopData.shopAll)
+    },
     methods:{
         submitFn(){
+            let token = this.$store.state.token;
+            // 该条订单数据
+            let orderMessage = this.$store.state.evaluateShopData.evaluateData;
+            // 所有待评价商品
+            let shopMessage = this.$store.state.evaluateShopData.shopAll;
+            // 评价商品
+            let shop = shopMessage[orderMessage.id];
+            let index = this.$store.state.evaluateShopData.i;
+            
             let data = {
-                    token:"登录接口获取的登录凭证",
-                    orderId:"数字订单号，订单接口的id，不是 orderNumber",
-                    reputations:[
+                    "token":token,
+                    "orderId":orderMessage.id,
+                    "reputations":[
                         {
-                        id:"订单归属的商品列表数据的id字段",
-                        reputation:"0 差评 1 中评 2 好评",
-                        remark:"评价备注，限200字符"
-                        },
-                        {
-                        id:"订单归属的商品列表数据的id字段",
-                        reputation:"0 差评 1 中评 2 好评",
-                        remark:"评价备注，限200字符"
+                        "id":shop[index].id,
+                        "reputation":2,
+                        "remark":this.evaluateTxt
                         }
                     ]
                     }
-
+            // console.log(data)
             axios.post('https://api.it120.cc/small4/order/reputation',
-            'postJsonString=' + data
+            'postJsonString=' + JSON.stringify(data)
             ).then(res => {
-
+                if(res.data.code === 0){
+                    alert('评价成功，感谢您的支持！');
+                    this.$router.push('/myOrderList/3')
+                }
             })
         }
     }

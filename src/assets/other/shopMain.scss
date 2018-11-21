@@ -41,9 +41,13 @@
         >.item{
             padding: rem(30) rem(20);
             display: flex;
+            align-items: center;
             .img-box{
+                flex: 0 0 20%;
                 width: rem(90);
                 height: rem(160);
+                border-radius: 50%;
+                overflow: hidden;
                 img{
                    width: 100%;
                    height: 100%;
@@ -52,8 +56,9 @@
             .text-box{
                 margin-left: rem(20);
                 .username{
+                    margin-top: rem(10);
                     color: #222222;
-                    font-size: rem(35);
+                    font-size: rem(30);
                     .good{
                         margin-left: rem(30);
                         padding: rem(3) rem(10);
@@ -64,7 +69,7 @@
                     }
                 }
                 .evaluate{
-                    font-size: rem(33);
+                    font-size: rem(28);
                     margin: rem(28) 0;
                 }
                 .time{

@@ -13,7 +13,23 @@
         商品信息
         </div>  
         <div class="shop-evaluate abc">
-            <div class="item" v-if="!valuateShow">
+            <div class="item" v-if="!valuateShow" v-for="(item,i) in list" :key="i">
+                <div class="img-box">
+                    <img src="../../assets/img/timg4.gif" alt="" />
+                </div>
+                <div class="text-box">
+                    <p class="username">
+                        {{item.user.sourceStr=="手机注册"?"手机注册用户":item.user.sourceStr}}
+                        <span class="good" v-if="item.goods.goodReputationStr == '好评'">好评</span> 
+                    </p>
+                    <p class="evaluate">
+                        {{item.goods.goodReputationRemark}}
+                    </p>
+                    <p class="time">{{item.goods.dateReputation}}</p>
+                </div>
+            </div>
+            <!-- 模板 -->
+            <!-- <div class="item" v-if="!valuateShow">
                 <div class="img-box">
                     <img src="../../assets/img/timg4.gif" alt="" />
                 </div>
@@ -27,8 +43,8 @@
                     </p>
                     <p class="time">2018-6-26 20 : 20 : 00</p>
                 </div>
-            </div>
-            <p class="valuate-null">暂无评价，快来抢杀花吧！</p>
+            </div> -->
+            <p class="valuate-null" v-if="valuateShow">暂无评价，快来抢杀花吧！</p>
         </div>
     </div>
     <!-- 13500000000  -->
@@ -44,7 +60,8 @@ import toggleFn from '../../utils/info-toggle';
 export default {
     data(){
         return {
-            valuateShow:false
+            valuateShow:false,
+            list:[]
         }
     },
     mounted(){
@@ -53,13 +70,12 @@ export default {
             if(res.data.code == 700){
                 this.valuateShow = true;
             }else if(res.data.code == 0){
-
+                this.list = res.data.data;
             }else{
                 alert(res.data.msg);
                 console.log(res);
             }
                 console.log(res);
-
         })
     },
     computed:{

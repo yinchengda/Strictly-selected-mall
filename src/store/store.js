@@ -6,11 +6,13 @@ import IndexData from './index';
 import ClassifyData from './classify';
 import ShopInfo from './shopInfo';
 import ShopCar from './shopCar';
+import EvaluateShopData from './evaluate';
 
 const indexData = IndexData();
 const classifyData = ClassifyData();
 const shopInfo = ShopInfo();
 const shopCar = ShopCar();
+const evaluateShopData = EvaluateShopData()
 
 Vue.use(Vuex);
 
@@ -60,7 +62,8 @@ const store = new Vuex.Store({
         indexData,
         classifyData,
         shopInfo,
-        shopCar
+        shopCar,
+        evaluateShopData
     }
 })
 
