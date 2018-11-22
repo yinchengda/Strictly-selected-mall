@@ -1,15 +1,3 @@
-// Array.prototype.remove=function(dx) 
-// { 
-//   if(isNaN(dx)||dx>this.length){return false;} 
-//   for(var i=0,n=0;i<this.length;i++) 
-//   { 
-//     if(this[i]!=this[dx]) 
-//     { 
-//       this[n++]=this[i] 
-//     } 
-//   } 
-//   this.length-=1 
-// }
 
 export default function ShopCar(){
     return {
@@ -87,13 +75,18 @@ export default function ShopCar(){
             removeFn(state){
                 let ok = confirm('您确定要删除这些商品吗？');
                 if(ok){
-                    state.shopDataList.forEach((ele,i) => {
-                        if(ele.checked){
-                            // console.log(state.shopDataList.indexOf(ele));
-                            state.shopDataList.splice(state.shopDataList.indexOf(ele),1);
-                            // state.shopDataList.remove(state.shopDataList.indexOf(ele));
-                        }
+                    state.shopDataList = state.shopDataList.filter(ele => {
+                        return !ele.checked
                     })
+
+                    /* 这... 我一直在纠结于 '删除' ; 根本没有想到过滤 -.-|||  look!↓*/
+                    // state.shopDataList.forEach((ele,i) => {
+                    //     if(ele.checked){
+                    //         // console.log(state.shopDataList.indexOf(ele));
+                    //         state.shopDataList.splice(state.shopDataList.indexOf(ele),1);
+                    //         // state.shopDataList.remove(state.shopDataList.indexOf(ele));
+                    //     }
+                    // })
                     this.commit('setLocationShopData')
                 }
             }

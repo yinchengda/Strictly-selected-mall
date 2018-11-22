@@ -226,7 +226,81 @@
     }
 
 
+    >.mimicry-box{
+        >.mb{
+            position: fixed;
+            background:rgba(0,0,0,0.5);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0; 
+            z-index: 20;
+        }
+        >.content{
+            position: fixed;
+            width: rem(452);
+            height: rem(502);
+            left: 20%;
+            top: 30%;
+            z-index: 21;
+            background: linear-gradient(to bottom left, #B1A670,#ece3cd);
+            border-radius: rem(5);
+            .icon-guanbi1{
+                font-size: rem(45);
+                color: #F1EAEB;
+                display: block;
+                text-align: right;
+                padding: rem(6) rem(10);
+            }
+            >.text{
+                text-align: center;
+                color: #fff;
+                letter-spacing: rem(3);
+                .title_one{
+                    font-size: rem(42);
+                    margin: rem(25) 0 rem(20) 0;
+                }
+                .title_two{
+                    font-size: rem(32);
+                    margin: rem(20) 0;
+                }
+                .title_go{
+                    font-size: rem(28);                    
+                }
+            }
+            >.tool-box{
+                margin-top: rem(60);
+                display: flex;
+                justify-content: center;
+                .invite-friends,.qr-code{
+                    flex: 0 0 30%;
+                    margin: 0 rem(40);
+                    text-align: center;
+                    color: #A8997A;
+                    span{
+                        margin: 0 rem(25);                        width: rem(80);
+                        height: rem(80);
+                        line-height: rem(80);
+                        text-align:center;
+                        background:#B3A17B;
+                        border-radius: 50%;
+                        display: block;
+                        margin-bottom: rem(10);
+                        .iconfont{
+                            color: #fff;
+                            font-size: rem(50);
+                        }
+                        .icon-zhuanfa{
 
+                        }
+                        .icon-tupian{
+
+                        }
+                    }
+                }
+            }
+        }
+    }
 
 
 

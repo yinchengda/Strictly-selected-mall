@@ -28,7 +28,7 @@
                 </div>
                 <div class="order-item-foot">
                     <span class="order-all-price">合计：￥{{item.amount}}</span>
-                    <div class="btn-box" v-if="!(orderType==-1)">
+                    <div class="btn-box" v-if="orderType === 0">
                         <button class="clear-order" @click="orderClose(item.id)">取消订单</button>
                         <button class="pay-now-order" @click="ok(item.amount,item.id)">立即支付</button>
                     </div>
@@ -79,8 +79,14 @@ export default{
     },
     methods:{
         toEvaluate(data,i){
-            this.$store.commit("setEvaluateShopMessage",{"data":data,"i":i})
-            this.$router.push('/evaluate');
+            if(this.orderType === 0){
+                this.$router.push('/orderInfo');
+                return;
+            }
+            if(this.orderType === 3){
+                this.$store.commit("setEvaluateShopMessage",{"data":data,"i":i})
+                this.$router.push('/evaluate');
+            }
         },
         ok(price,id){
             let obj = {

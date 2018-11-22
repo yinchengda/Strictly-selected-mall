@@ -67,11 +67,6 @@
 <script>
 import axios from 'axios';
 export default {
-    data(){
-        return{
-            cutData:[]
-        }
-    },
     computed:{
         idata(){
             return this.$store.getters.shopData;
@@ -82,14 +77,6 @@ export default {
         if(!this.idata.length){
             this.$store.dispatch('getShopDataList')
         }
-    },
-    mounted(){
-        axios.get('https://api.it120.cc/small4/shop/goods/kanjia/list')
-        .then(res => {
-            if(res.data.code === 0){
-                this.cutData = res.data.data.result
-            }
-        })
     }
 }
 </script>

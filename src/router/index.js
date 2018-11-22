@@ -104,6 +104,10 @@ const router = new Router({
       component:()=>import('@/views/myCutShopList')
     },
     {
+      path:'/orderInfo',
+      component:()=>import('@/views/orderInfo')
+    },
+    {
       path: '*',
       redirect: (to) => {
         if (to.path === '/') {

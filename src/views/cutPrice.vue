@@ -68,18 +68,58 @@
                 </div>
             </div>
         </div>
+
+        <!-- 拟态框 -->
+        <div class="mimicry-box">
+            <div class="mb"></div>
+            <div class="content">
+                <i class="iconfont icon-guanbi1"></i>
+                <div class="text">
+                    <p class="title_one">恭喜</p>
+                    <p class="title_two">创建砍价成功</p>
+                    <p class="title_go">快邀请好友来砍价吧~</p>
+                </div>
+                <div class="tool-box">
+                    <div class="invite-friends">
+                        <span>
+                            <i class="iconfont icon-zhuanfa"></i>
+                        </span>
+                        邀请好友
+                    </div>
+                    <div class="qr-code">
+                         <span>
+                            <i class="iconfont icon-tupian"></i>
+                        </span>
+                        生成二维码
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 <script>
+import $ from 'jquery';
 import Head from '@/components/common/header';
 export default {
+    components:{
+        Head
+    },
     data(){
         return {
             gg:false
         }
     },
-    components:{
-        Head
+    mounted(){
+        // $('.mimicry-box').hide();
+        $('.invite-friends-cut').click(()=>{
+            $('.mimicry-box').show();
+        })
+        $('.mb').click(()=>{
+            $('.mimicry-box').hide();
+        })
+        $('.icon-guanbi1').click(()=>{
+            $('.mimicry-box').hide();
+        })
     },
     methods:{
         no_look(){

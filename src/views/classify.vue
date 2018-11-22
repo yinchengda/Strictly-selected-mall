@@ -5,7 +5,6 @@
             <List />
             <Content />
         </div>  
-        
     </div>
 </template>
 <script>

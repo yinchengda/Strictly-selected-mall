@@ -76,8 +76,19 @@ export default {
       okShow: false,
       typeId: "",
       typeTwoId: "",
-      name: ""
+      name: "",
+      cutData:[]
     };
+  },
+  mounted(){
+    //为了拿到砍价id
+     axios.get('https://api.it120.cc/small4/shop/goods/kanjia/list')
+        .then(res => {
+            if(res.data.code === 0){
+                this.cutData = res.data.data.result;
+                console.log(this.cutData);
+            }
+        })
   },
   computed: {
     infoData() {
@@ -97,32 +108,44 @@ export default {
     },
     //数量加减
     countFn(type) {S
-      if (type == "add") {
+      if(type == "add") {
         this.count++;
-      } else if (type == "minus") {
+      }else if (type == "minus"){
         this.count <= 1 ? "" : this.count--;
-      } else {
+      }else {
         return;
       }
     },
     //非常繁琐的一个函数 -.-
     addShopCart() {
       let token = this.$store.state.token;
-      console.log(this.infoData.basicInfo.id)
-      if (!(this.typeId === "") | !(this.typeTwoId === "")) {
+      let id;
+        if (!(this.typeId === "") | !(this.typeTwoId === "")) {
+          this.cutData.forEach(ele => {
+            if(ele.goodsId == this.infoData.basicInfo.id){
+              id = ele.id;
+              return;
+            }
+          })
+                    
           // 参与砍价
           axios.post('https://api.it120.cc/small4/shop/goods/kanjia/join',
-          'kjid='+this.infoData.basicInfo.id+
+          'kjid='+id+
           '&token='+token
           )
           .then(res => {
-              console.log(res)
+              if(res.data.code === 0){
+                this.$router.push('/goCutPrice');
+                this.toggleShade();        
+              }else{
+                alert(res.data.msg)
+              }
           })
       }else{
           alert('请选择规格!')
-        }
+      }
     },
-    setId(id, name, i) {
+    setId(id,name,i){
       
       this.name = name;
       if (i == 0) {
