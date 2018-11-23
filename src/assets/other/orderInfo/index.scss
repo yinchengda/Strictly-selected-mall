@@ -1,8 +1,85 @@
 #order-info{
-    background: #f2f2f2;
+    background: #F2F2F2;
     #common-header{
         background: #fff;
     }
 
+    .box_every{
+        background: #fff;
+        margin-top: rem(20);
+        padding: rem(25);
+        border-bottom: rem(2) solid #eeefeb;
+    }
+
+    .order-status{
+        display: flex;
+        align-items: center;
+        background: #fff;
+        margin-top: rem(20);
+        padding: rem(25);
+        border-bottom: rem(2) solid #eeefeb;
+        .icon-box{
+            .iconfont-bg{
+                padding: 0;
+                display: inline-block;
+                background: #E74242;
+                border: rem(2s) solid #C63943;
+                padding: rem(6) rem(10);
+                border-radius: rem(10);
+                .iconfont{
+                    color: #fff;
+                    font-size: rem(66)
+                }
+            }
+        }
+        .order-status-text{
+            margin-left: rem(35);
+            margin-top: -.5rem;
+            font-size: rem(32);
+            color: #dc474e;
+        }
+    }
+
+    .courier-number{
+        background: #fff;
+        padding: rem(35) rem(25);
+        border-bottom: rem(2) solid #eeefeb;
+        display: flex;
+        >.icon-box{
+            .icon-wuliu,.icon-dizhi1{
+                color: #C8C8C8;
+                font-size: rem(50);
+            }
+        }
+        >.text{
+            margin-left: rem(50);
+            >.title-num{
+                letter-spacing: rem(3);
+                font-size: rem(30);
+                // font-weight: 500;
+                color: #000;
+            }
+            >.info{
+                font-size: rem(28);
+                color: #9e9e9e;
+                margin-top: rem(40);
+
+            }
+        }
+    }
+
+    .order-shop-message{
+        margin-top: rem(20);
+        background: #fff;
+        padding: rem(35) rem(25);
+        >.title{
+            font-size: rem(32);
+            color: #000;
+            border-bottom: rem(2) solid #eeefeb;
+        }
+        >.shop-drescribe{
+            
+        }
+    }
     
-}
+};
