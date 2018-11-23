@@ -34,6 +34,7 @@
                     </div>
                 </div>
             </div>
+            <!-- <h1>论一个专业骗子的自我修养 2018-11-12晚</h1> -->
         </div>
         {{Com_orderList}}
     </div>
@@ -56,6 +57,7 @@ export default{
     created(){
         let path = this.$route.params.type;
         this.orderType = path;
+        // console.log(this.orderType);
     },
     mounted(){
         let token = this.$store.state.token;
@@ -69,6 +71,8 @@ export default{
                 this.$router.push('/index/user')
             }
         }
+        /*dev:提测 （提交测试）
+         */
     },
     computed:{
         Com_orderList(){
@@ -79,11 +83,13 @@ export default{
     },
     methods:{
         toEvaluate(data,i){
-            if(this.orderType === 0){
+            console.log(this.orderType)
+            if(this.orderType == 0){ //why?使用全等判断,首次进入页面不会判断为true, but 使用等于却可以 已知数字一直0(number);为什么？
+                alert('why?')
                 this.$router.push('/orderInfo');
                 return;
             }
-            if(this.orderType === 3){
+            if(this.orderType == 3){ //与上判断一样(同一bug)
                 this.$store.commit("setEvaluateShopMessage",{"data":data,"i":i})
                 this.$router.push('/evaluate');
             }

@@ -1,4 +1,3 @@
-
 export default function ShopCar(){
     return {
         state:{
@@ -74,9 +73,9 @@ export default function ShopCar(){
             },
             removeFn(state){
                 let ok = confirm('您确定要删除这些商品吗？');
-                if(ok){
-                    state.shopDataList = state.shopDataList.filter(ele => {
-                        return !ele.checked
+                    if(ok){
+                        state.shopDataList = state.shopDataList.filter(ele => {
+                            return !ele.checked
                     })
 
                     /* 这... 我一直在纠结于 '删除' ; 根本没有想到过滤 -.-|||  look!↓*/
@@ -89,6 +88,10 @@ export default function ShopCar(){
                     // })
                     this.commit('setLocationShopData')
                 }
+            },
+            removeOneFn(state,i){
+                state.shopDataList.splice(i,1);
+                this.commit('setLocationShopData')
             }
         },
         getters:{

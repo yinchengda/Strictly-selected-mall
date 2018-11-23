@@ -24,6 +24,7 @@
                         </div>
                     </div>
                 </div>
+                <button class="shop-item-remove" @click="removeShop(i)" shop-item-remove>删除</button>
             </div>
         </div>
 
@@ -55,6 +56,7 @@
     </div>
 </template>
 <script>
+import shopTouchMove from '../../utils/shopTouchRemove.js';
 export default {
     data(){
         return {
@@ -69,6 +71,9 @@ export default {
     created(){
         this.$store.commit('getLocationShopData');
     },
+    mounted(){
+        shopTouchMove()
+    },
     methods:{
         addCount(id){
             this.$store.commit('addCount',id)
@@ -78,8 +83,10 @@ export default {
         },
         checkedFn(id){
             this.$store.commit('checkedToggle',id)
+        },
+        removeShop(i) {
+            this.$store.commit("removeOneFn",i);
         }
-        
     }
 }
 </script>

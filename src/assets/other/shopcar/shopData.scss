@@ -4,6 +4,8 @@
         background: #fff;
         padding: rem(25) rem(15);
         display: flex;
+        justify-content: space-between;
+        overflow: hidden;
         .checked-box{
             line-height: rem(200);
             input{
@@ -30,6 +32,7 @@
             }
         }
         .shop-message{
+            // flex: 0 0 10%;
             display: flex;
             .img-box{
                 width: rem(200);
@@ -90,6 +93,16 @@
                     }
                 }
             }
+        }
+        .shop-item-remove{
+            // flex:  0 0 0%;
+            float: right;
+            width: 0rem;
+            height: 100%;
+            padding: 0;
+            background:#b8282e;
+            color: #fff;
+            transition: .5s all linear;
         }
     }
 }
