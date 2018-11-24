@@ -37,7 +37,7 @@
             <div class="shop-list">
                 <div class="item">
                     <div class="img-box">
-                        <img src="" alt="" />
+                        <img src="../assets/img/recommend-item4.png" />
                     </div>
                     <div class="text">
                         <div class="shop-price-title">
@@ -53,6 +53,20 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="order-detail">
+            <p>
+                <span>商品金额</span>
+                <span>￥0.01</span>
+            </p>
+            <p>
+                <span>运费</span>
+                <span>+￥0</span>
+            </p>
+            <p>
+                <span>应付总额</span>
+                <span>￥0.01</span>
+            </p>
         </div>
     </div>
 </template>

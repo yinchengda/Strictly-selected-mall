@@ -28,7 +28,7 @@
                 </div>
                 <div class="order-item-foot">
                     <span class="order-all-price">合计：￥{{item.amount}}</span>
-                    <div class="btn-box" v-if="orderType === 0">
+                    <div class="btn-box" v-if="orderType == 0">
                         <button class="clear-order" @click="orderClose(item.id)">取消订单</button>
                         <button class="pay-now-order" @click="ok(item.amount,item.id)">立即支付</button>
                     </div>
